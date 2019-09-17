@@ -1,0 +1,17 @@
+$bluecolor: #62c2e4;
+$bgcolor: #fcfcfc;
+
+main.inner-scroll.scroll-y{
+  background-color: $bgcolor;
+}
+ion-icon.md.hydrated {
+  color: $bluecolor;
+  margin-top: 10px;
+  font-size: 21px;
+  float: left;
+}
+.main-title {
+  margin-top: -1px !important;
+  position: relative;
+  top: 10px;
+}

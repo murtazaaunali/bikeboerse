@@ -1,0 +1,24 @@
+$bluecolor: #62c2e4;
+
+.search-fields {
+  text-decoration: none;
+  color: #000;
+  .bg-search-blue {
+  background: $bluecolor;
+  width: 54px;
+  text-align: center;
+  padding: 17px 0px;
+  border-radius: 38px;
+  color: #fff;
+    margin: 0px auto;
+}
+  .search-query {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+.border-bottom {
+  border-bottom: 1px solid #d4d4d4;
+  height: 2px;
+  margin: 20px 50px;
+}
