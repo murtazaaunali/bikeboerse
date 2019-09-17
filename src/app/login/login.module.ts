@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
 
+// Components
+import { MainHeaderComponent } from '../../app/components/main-header/main-header.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage, MainHeaderComponent]
 })
 export class LoginPageModule {}
