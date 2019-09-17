@@ -1,0 +1,13 @@
+<ion-toolbar>
+	<ion-thumbnail slot="start">
+		<ion-img [src]="logosrc.url" class="logo-header" [alt]="logosrc.alt"></ion-img>
+	</ion-thumbnail>
+	<ion-buttons slot="end">
+		<ion-button [routerLink]="['/search']" routerLinkActive="router-link-active">
+			<ion-icon slot="icon-only" name="md-search"></ion-icon>
+		</ion-button>
+		<ion-button [routerLink]="['/my-account']" routerLinkActive="router-link-active">
+			<ion-icon slot="icon-only" name="md-person"></ion-icon>
+		</ion-button>
+	</ion-buttons>
+</ion-toolbar>

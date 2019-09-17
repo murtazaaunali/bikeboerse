@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+// Components
+import { MainHeaderComponent } from '../../app/components/main-header/main-header.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +21,6 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage , MainHeaderComponent]
 })
 export class HomePageModule {}
