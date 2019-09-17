@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'wishlist', loadChildren: './wishlist/wishlist.module#WishlistPageModule' },
   { path: 'policies', loadChildren: './policies/policies.module#PoliciesPageModule' },
   { path: 'my-account', loadChildren: './my-account/my-account.module#MyAccountPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 ];
 
 @NgModule({
