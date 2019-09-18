@@ -1,10 +1,47 @@
 <ion-header>
-<main-header></main-header>
+  <main-header></main-header>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If your get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <div class="product-slider">
+      <ion-slides pager [pager]="false" [scrollbar]="true" [mode]="ios">
+        <ion-slide style="background-color: green">
+          <h2>Slide 1</h2>
+        </ion-slide>
+        <ion-slide style="background-color: blue">
+          <h2>Slide 2</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 3</h2>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <h1>Categories</h1>
+    <div class="slider">
+      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
+        <ion-slide style="background-color: green">
+          <h2>Slide 1</h2>
+        </ion-slide>
+        <ion-slide style="background-color: blue">
+          <h2>Slide 2</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 3</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 4</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 5</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 6</h2>
+        </ion-slide>
+        <ion-slide style="background-color: red">
+          <h2>Slide 7</h2>
+        </ion-slide>
+      </ion-slides>
+    </div>
   </div>
 </ion-content>
