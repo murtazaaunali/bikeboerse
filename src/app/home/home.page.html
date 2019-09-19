@@ -2,21 +2,15 @@
 <ion-content>
   <div class="ion-padding">
     <div class="product-slider">
-      <ion-slides pager [pager]="false" [scrollbar]="true" [mode]="ios">
-        <ion-slide style="background-color: green">
-          <h2>Slide 1</h2>
-        </ion-slide>
-        <ion-slide style="background-color: blue">
-          <h2>Slide 2</h2>
-        </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 3</h2>
+      <ion-slides pager [pager]="false" [scrollbar]="true">
+        <ion-slide *ngFor="let product of products" style="background-color: green">
+          <h2>{{product.title}}</h2>
         </ion-slide>
       </ion-slides>
     </div>
     <h1>Categories</h1>
     <div class="slider">
-      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
+      <ion-slides [pager]="false" [scrollbar]="true" [options]="slideOpts">
         <ion-slide style="background-color: green">
           <h2>Slide 1</h2>
         </ion-slide>
