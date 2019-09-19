@@ -7,23 +7,23 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
 
-// Components
-import { MainHeaderComponent } from '../../app/components/main-header/main-header.component';
+import { ComponentsModule } from './../components/components.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LoginPage
-  }
+    {
+        path: '',
+        component: LoginPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [LoginPage, MainHeaderComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ComponentsModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [LoginPage]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

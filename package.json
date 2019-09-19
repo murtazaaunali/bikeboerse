@@ -1,8 +1,8 @@
 {
-  "name": "BikeBoerse",
+  "name": "Bike Boerse",
   "version": "0.0.1",
   "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "homepage": "https://bikeboerse.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -55,5 +55,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "Ebike MTB Enduro Downhill Fahrrad Zubehör gebraucht & neu sicher"
 }

@@ -1,14 +1,15 @@
-<ion-toolbar color="dark">
-	<ion-thumbnail slot="start">
-        <img src="assets/logo.png" class="logo-header">
-		<!--<ion-img [src]="assets/logo.png" class="logo-header" [alt]="logosrc.alt"></ion-img>-->
-	</ion-thumbnail>
-	<ion-buttons slot="end">
-		<ion-button [routerLink]="['/search']" routerLinkActive="router-link-active">
-			<ion-icon slot="icon-only" name="md-search"></ion-icon>
-		</ion-button>
-		<ion-button [routerLink]="['/my-account']" routerLinkActive="router-link-active">
-			<ion-icon slot="icon-only" name="md-person"></ion-icon>
-		</ion-button>
-	</ion-buttons>
-</ion-toolbar>
+<ion-header>
+	<ion-toolbar color="dark">
+		<ion-thumbnail slot="start">
+			<ion-img [routerLink]="['/']" src="assets/logo.png" class="logo-header"></ion-img>
+		</ion-thumbnail>
+		<ion-buttons slot="end">
+			<ion-button [routerLink]="['/search']" routerLinkActive="router-link-active">
+				<ion-icon slot="icon-only" name="md-search"></ion-icon>
+			</ion-button>
+			<ion-button [routerLink]="['/my-account']" routerLinkActive="router-link-active">
+				<ion-icon slot="icon-only" name="md-person"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>

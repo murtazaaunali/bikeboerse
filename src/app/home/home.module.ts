@@ -6,14 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
-// Components
-import { MainHeaderComponent } from '../../app/components/main-header/main-header.component';
+import { ComponentsModule } from './../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -21,6 +21,6 @@ import { MainHeaderComponent } from '../../app/components/main-header/main-heade
       }
     ])
   ],
-  declarations: [HomePage , MainHeaderComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

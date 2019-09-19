@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHeaderComponent implements OnInit {
   
-  logosrc: any = {
-    url: 'https://dummyimage.com/60x60/ffffff/000000.png&text=Logo',
-    alt: 'Logo'
-  };
-  
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }
