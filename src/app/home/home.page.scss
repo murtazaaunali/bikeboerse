@@ -1,10 +1,194 @@
 :host {
     .product-slider {
-        height: 300px;
-        ion-slides {
-            ion-slide {
-                height: 300px;
+
+        .product-heading {
+            text-transform: uppercase;
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+        .product-main-slider{
+            width: 100%;
+            border: 1px solid #d4d4d4;
+            border-radius: 3px;
+            border-bottom: 2px solid #d4d4d4;
+        }
+        .bg-title {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            a{
+                text-decoration: none;
+            }
+            .product-slider-title {
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                padding: 7px;
+                border-radius: 3px;
+                font-size: 14px;
+                margin-bottom: 0px;
+                width: 60%;
+                text-align: left;
+                line-height: 17px;
+
+            }
+            .slider-price{
+                background: #62c2e4;
+                color: #fff;
+                float: left;
+                padding: 1px 9px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 600;
+                margin-top: -4px;
+                margin-left: 12px;
             }
         }
+        ion-slides {
+            ion-slide {
+
+            }
+        }
+    }
+    .slider-1 {
+
+        .product-heading {
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            border-bottom: 2px solid #d4d4d4;
+            span {
+                border-bottom: 2px solid #62c2e4;
+                width: 44px;
+                display: block;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .cst-slider-wrap {
+            border: 1px solid #d4d4d4;
+            margin: 2px;
+            border-radius: 4px;
+            a{
+                text-decoration: none;
+            }
+            .product-main-slider{
+                width: 100%;
+            }
+            .cat-title {
+                margin-bottom: 3px;
+                text-transform: uppercase;
+                font-size: 11px;
+                text-align: left;
+                margin-left: 5px;
+                color: #2d2d2d;
+                margin-top: 3px;
+            }
+        }
+
+
+        ion-slides {
+            ion-slide {
+
+            }
+        }
+    }
+    .slider-2 {
+      .product-heading {
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        border-bottom: 2px solid #d4d4d4;
+      span{
+          border-bottom: 2px solid #62c2e4;
+          width: 44px;
+          display: block;
+          position: relative;
+          top: 2px;
+      }
+      }
+        .main-bottom-slider {
+            background: #808080;
+            border-radius: 0px 0px 4px 4px;
+            .slider-price {
+                background: #62c2e4;
+                color: #fff;
+                float: left;
+                padding: 2px 6px;
+                border-radius: 50px;
+                font-size: 12px;
+                font-weight: 600;
+                margin-top: -9px;
+                margin-left: 5px;
+                width: 60px;
+                position: relative;
+                z-index: 9;
+                margin-bottom: 0px;
+            }
+            .product-slider-title {
+                background: #808080;
+                color: #fff;
+                font-size: 12px;
+                text-align: left;
+                margin-bottom: 0px;
+                padding: 7px 5px;
+                border-radius: 0px 0px 4px 4px;
+                clear: both;
+            }
+        }
+
+
+        .cst-slider-wrap {
+            border: 1px solid #d4d4d4;
+            margin: 2px;
+            border-radius: 4px;
+            a{
+                text-decoration: none;
+            }
+            .product-main-slider{
+                width: 100%;
+            }
+            .cat-title {
+                margin-bottom: 3px;
+                text-transform: uppercase;
+                font-size: 11px;
+                text-align: left;
+                margin-left: 5px;
+                color: #2d2d2d;
+                margin-top: 3px;
+            }
+        }
+
+
+        ion-slides {
+            ion-slide {
+
+            }
+        }
+    }
+  .slider-3 {
+    .product-heading {
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      border-bottom: 2px solid #d4d4d4;
+
+      span {
+          border-bottom: 2px solid #62c2e4;
+          width: 44px;
+          display: block;
+          position: relative;
+          top: 2px;
+      }
+    }
+
+
+    ion-slides {
+      ion-slide {
+
+      }
+    }
+  }
+    .google-add {
+        margin: 10px 0px;
     }
 }

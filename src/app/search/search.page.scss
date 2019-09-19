@@ -1,5 +1,12 @@
 $bluecolor: #62c2e4;
-
+ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.hydrated.md.searchbar-left-aligned {
+  padding: 0px;
+  box-shadow: none !important;
+}
+.searchbar-input.sc-ion-searchbar-md {
+  box-shadow: none !important;
+  border-bottom: 1px solid #d4d4d4 !important;
+}
 .search-fields {
   text-decoration: none;
   color: #000;
