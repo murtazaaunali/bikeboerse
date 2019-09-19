@@ -2,37 +2,293 @@
 <ion-content>
   <div class="ion-padding">
     <div class="product-slider">
-      <ion-slides pager [pager]="false" [scrollbar]="true">
-        <ion-slide *ngFor="let product of products" style="background-color: green">
-          <h2>{{product.title}}</h2>
+      <h5 class="product-heading">Premiumanzeigen</h5>
+      <ion-slides pager [pager]="false" [scrollbar]="true" [mode]="ios">
+        <ion-slide>
+          <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+        <div class="bg-title">
+          <a href="#">
+          <p class="product-slider-title">Title of the product and second line of product</p>
+          <p class="slider-price">2999 €</p>
+          </a>
+        </div>
+        </ion-slide>
+        <ion-slide>
+          <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+          <div class="bg-title">
+            <a href="#">
+            <p class="product-slider-title">Title of the product and second line of product</p>
+            <p class="slider-price">2999 €</p>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+          <div class="bg-title">
+            <a href="#">
+            <p class="product-slider-title">Title of the product and second line of product</p>
+            <p class="slider-price">2999 €</p>
+            </a>
+          </div>
         </ion-slide>
       </ion-slides>
     </div>
-    <h1>Categories</h1>
-    <div class="slider">
-      <ion-slides [pager]="false" [scrollbar]="true" [options]="slideOpts">
-        <ion-slide style="background-color: green">
-          <h2>Slide 1</h2>
+
+    <div class="slider-1">
+      <h5 class="product-heading">Kategorein<span></span></h5>
+      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+          <ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider"></ion-img>
+          <p class="cat-title">Downhill</p>
+            </a>
+          </div>
+
         </ion-slide>
-        <ion-slide style="background-color: blue">
-          <h2>Slide 2</h2>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-2.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">Amenduro</p>
+            </a>
+          </div>
         </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 3</h2>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">E-Bike</p>
+            </a>
+          </div>
         </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 4</h2>
+        <ion-slide >
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-2.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">Downhill</p>
+            </a>
+          </div>
         </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 5</h2>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">Downhill</p>
+            </a>
+          </div>
         </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 6</h2>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-2.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">Downhill</p>
+            </a>
+          </div>
         </ion-slide>
-        <ion-slide style="background-color: red">
-          <h2>Slide 7</h2>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+            <ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider"></ion-img>
+            <p class="cat-title">Downhill</p>
+            </a>
+          </div>
         </ion-slide>
       </ion-slides>
     </div>
+    <div class="google-add"><ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img></div>
+    <div class="slider-2">
+      <h5 class="product-heading">Neuste Artikel<span></span></h5>
+      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts2" [mode]="ios">
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+              <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide >
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+      </ion-slides>
+      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts2" [mode]="ios">
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide >
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="cst-slider-wrap">
+            <a href="#">
+              <ion-img [routerLink]="['/']" src="assets/product-1.png" class="product-main-slider"></ion-img>
+              <div class="main-bottom-slider">
+                <p class="slider-price">2999 €</p><p class="slider-price">M</p>
+                <p class="product-slider-title">Title of the product and second line of product</p>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+      <div class="slider-3">
+          <h5 class="product-heading">Neuste User videos<span></span></h5>
+          <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts3" [mode]="ios">
+              <ion-slide>
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+            <ion-slide>
+              <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+            </ion-slide>
+              <ion-slide>
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+              <ion-slide >
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+              <ion-slide>
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+              <ion-slide>
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+              <ion-slide>
+                <ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+              </ion-slide>
+          </ion-slides>
+      </div>
+
   </div>
+
+
+
 </ion-content>

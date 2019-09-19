@@ -9,8 +9,13 @@ import { ProductModel } from '../models/product-model';
 })
 export class HomePage {
     slideOpts: any = {
-        slidesPerView: 3,
-        paginationType: 'progress'
+        slidesPerView: 3
+    };
+    slideOpts2: any = {
+        slidesPerView: 2
+    };
+    slideOpts3: any = {
+        slidesPerView: 1
     };
     products: ProductModel[];
 
