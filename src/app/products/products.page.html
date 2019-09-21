@@ -1,4 +1,177 @@
 <main-header></main-header>
-<ion-content>
+<ion-content padding>
+	<div class="ion-padding">
+		
+
+		<div class="slider-1">
+			<h5 class="product-heading"><span></span></h5>
+			<ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
+				<ion-slide *ngFor="let category of categories">
+					<div class="cst-slider-wrap">
+						<a href="#">
+							<ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider">
+							</ion-img>
+							<p class="cat-title">{{ category.title  }}</p>
+						</a>
+					</div>
+
+				</ion-slide>
+			</ion-slides>
+		</div>
+		
+	
+				
+        </div>
+        <div class="product-list">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6">
+                           <p class="mb0">Titel of the product</p>
+                        </ion-col>
+                        <ion-col size="6">
+                            <div class="list-detail">
+                              
+                                <div class="star-right">
+                                    <p><ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                                         </p>
+                                </div>
+                            </div>
+    
+                        </ion-col>
+    
+                    </ion-row>
+                    <ion-row>
+                            <ion-col size= "12">
+                               <p class="mb0">Titel of the product  of the second line...</p>
+                            </ion-col>
+                        
+        
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size= "6">
+                               <p size class="mb0 blue"><span class="bold-blue blue">Preis : </span><span class="amount blue">12345</span></p>
+                            </ion-col>
+                            <ion-col size= "6">
+                                <p class="mb0"><span class="grey-bold">Größe:</span><span class="length">L</span>
+                             </ion-col>
+                        
+        
+                        </ion-row>
+                        <ion-row>
+                            <ion-col size= "6">
+                               <p class="mb0"><span class="grey-bold">Pay Pal:</span> <span class="amount">Ja</span></p>
+                            </ion-col>
+                            <ion-col size= "6">
+                                <p class="mb0"><span class="grey-bold">Abholung : </span> <span class="amount">Ja</span></p>
+                             </ion-col>
+                             <ion-col size= "6">
+                                <p class="mb0 grey-bold small-size">Hersteller:</p>
+                             </ion-col>
+                             <ion-col size= "6">
+                                 <p class="mb0">Specialized </p>
+                              </ion-col>
+                              <ion-col size= "6">
+                                <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
+                             </ion-col>
+                             <ion-col size= "6">
+                                 <p class="mb0">160mm </p>
+                              </ion-col>
+                        
+        
+                        </ion-row>
+    
+                </ion-grid>
+
+                <ion-item class="p0">
+                    <ion-textarea class="comments" placeholder="Beschreibung"></ion-textarea>
+                   </ion-item>
+
+                   <p class="text-center-doe">Verkaufer: <span class="grey-bold">Jhon Doe</span></p>
+<div class="main-btn">
+
+        <button ion-button icon-start block color="dark" class="button-login">
+
+                KONTAKTIEREN
+                  </button>
+</div>
+                   
+
+
+    <div class="google-add">
+        <ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img>
+    </div>
+
+    <div class="slider-1">
+        <h5 class="product-heading font-10">BEISPIELVIDEO<span></span></h5>
+        <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
+            <ion-slide *ngFor="let category of categories">
+                <div class="cst-slider-wrap">
+                    <a href="#">
+
+                        <ion-img src="../assets/small-car-1.png" class="product-main-slider">
+                        </ion-img>
+                        <p class="cat-title">{{ category.title  }}</p>
+                    </a>
+                </div>
+
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+
+    <ion-grid>
+         
+                <ion-row>
+                   
+                     <ion-col size= "6">
+                        <p class="mb0 grey-bold small-size">Hersteller:</p>
+                     </ion-col>
+                     <ion-col size= "6">
+                         <p class="mb0">Specialized </p>
+                      </ion-col>
+                      <ion-col size= "6">
+                        <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
+                     </ion-col>
+                     <ion-col size= "6">
+                         <p class="mb0">160mm </p>
+                      </ion-col>
+                
+
+                </ion-row>
+                <div id='map'></div>
+
+
+        </ion-grid>
+    
+            </div>
+
+
 
 </ion-content>
+<footer>    <ion-row class="footer">
+        <ion-col>
+          <button ion-button icon-only color="grey" clear small class="footer w20">
+           <img src="../assets/player.png">
+           
+            <div class="label-footer">Player</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-only color="grey" clear small class="footer w20">
+            <img src="../assets/add.png">
+         
+            <div class="label-footer">Inserieren</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-only color="grey" clear small class="footer w20">
+            <img src="../assets/chat.png">
+      
+            <div class="label-footer">Chat</div>
+          </button>
+        </ion-col>
+       
+        
+      </ion-row>
+    </footer>
+  
