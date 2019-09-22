@@ -1,4 +1,46 @@
 <main-header></main-header>
-<ion-content>
+<ion-content padding>
+    <div class="backicon"><img src="../assets/backicon.png"></div>
+    <ion-item-sliding (ionSwipe)="delete(item)">
+        <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
+            <div class="main-list-message">
 
+           <p class="date-message">Montag, 17:40</p>
+            <ion-img [routerLink]="['/']" src="assets/avatar-image.png" class="message-profile"></ion-img>
+            <p class="message-list-name">Produkt Titel Produkt Titel  <span class="message-name">John Doe</span></p>
+
+            </div>
+        </ion-item>
+        <ion-item-options>
+            <button class="del-icon" ion-button expandable (click)="delete(item)">  <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img></button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding (ionSwipe)="delete(item)">
+        <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
+            <div class="main-list-message">
+
+                <p class="date-message">Montag, 17:40</p>
+                <ion-img [routerLink]="['/']" src="assets/avatar-image.png" class="message-profile"></ion-img>
+                <p class="message-list-name">Produkt Titel Produkt Titel  <span class="message-name">John Doe</span></p>
+
+            </div>
+        </ion-item>
+        <ion-item-options>
+            <button class="del-icon" ion-button expandable (click)="delete(item)">  <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img></button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding (ionSwipe)="delete(item)">
+        <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
+            <div class="main-list-message">
+
+                <p class="date-message">Montag, 17:40</p>
+                <ion-img [routerLink]="['/']" src="assets/avatar-image.png" class="message-profile"></ion-img>
+                <p class="message-list-name">Produkt Titel Produkt Titel  <span class="message-name">John Doe</span></p>
+
+            </div>
+        </ion-item>
+        <ion-item-options>
+            <button class="del-icon" ion-button expandable (click)="delete(item)">  <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img></button>
+        </ion-item-options>
+    </ion-item-sliding>
 </ion-content>

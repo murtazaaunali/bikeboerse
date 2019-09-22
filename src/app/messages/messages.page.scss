@@ -1,0 +1,53 @@
+.backicon {
+  float: left;
+  width: 12px;
+  margin-bottom: 20px;
+}
+button.del-icon {
+  background: #fc6666;
+  margin-top: 5px;
+  padding: 0px 30px;
+  .del-img {
+    width: 30px;
+  }
+}
+  .main-message-list{
+
+      border-top: 1px solid #d4d4d4;
+      border-radius: 3px;
+      margin-top: 5px;
+      border-right: 1px solid #d4d4d4;
+      border-left: 1px solid #d4d4d4;
+    --ion-item-background: #fff;
+    .item-inner{
+      padding: 0px;
+    }
+    }
+
+.main-list-message {
+  width: 100%;
+  .date-message {
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0px;
+  }
+  .message-profile {
+    width: 60px;
+    float: left;
+    padding-bottom: 17px;
+    padding-left: 8px;
+  }
+  .message-list-name {
+    font-weight: 600;
+    margin-top: 7px;
+    padding-left: 20px;
+    float: left;
+    font-size: 15px;
+    span{
+      clear: both;
+      display: block;
+      color: #62c2e4;
+    }
+  }
+}
