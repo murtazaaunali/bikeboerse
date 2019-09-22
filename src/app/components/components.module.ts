@@ -5,18 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 // Components
 import { MainHeaderComponent } from '../../app/components/main-header/main-header.component';
-
+import { MainFooterComponent } from './main-footer/main-footer.component';
 
 @NgModule({
-  declarations: [MainHeaderComponent],
-  imports: [
-    CommonModule,
-    IonicModule,
-    RouterModule,
-    FormsModule
-  ],
-  exports: [MainHeaderComponent]
+    declarations: [MainHeaderComponent, MainFooterComponent],
+    imports: [
+        CommonModule,
+        IonicModule,
+        RouterModule,
+        FormsModule
+    ],
+    exports: [MainHeaderComponent, MainFooterComponent]
 })
-export class ComponentsModule { 
+export class ComponentsModule {
 
 }

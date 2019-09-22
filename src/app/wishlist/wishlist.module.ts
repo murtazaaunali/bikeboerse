@@ -7,7 +7,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { WishlistPage } from './wishlist.page';
-
 const routes: Routes = [
   {
     path: '',

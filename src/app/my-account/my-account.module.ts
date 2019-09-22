@@ -1,4 +1,3 @@
-import { ComponentsModule } from './../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,22 +6,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MyAccountPage } from './my-account.page';
-
+import { ComponentsModule } from './../components/components.module';
 const routes: Routes = [
-  {
-    path: '',
-    component: MyAccountPage
-  }
+    {
+        path: '',
+        component: MyAccountPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ComponentsModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [MyAccountPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ComponentsModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [MyAccountPage]
 })
-export class MyAccountPageModule {}
+export class MyAccountPageModule { }
