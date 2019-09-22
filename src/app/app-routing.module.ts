@@ -16,6 +16,14 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+  { path: 'product', loadChildren: './product/product.module#ProductPageModule' },
+  { path: 'chats', loadChildren: './chats/chats.module#ChatsPageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
+  { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+  { path: 'add-product', loadChildren: './add-product/add-product.module#AddProductPageModule' },
+  { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
+  { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
+  { path: 'edit-product', loadChildren: './edit-product/edit-product.module#EditProductPageModule' },
 ];
 
 @NgModule({
