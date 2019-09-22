@@ -1,152 +1,90 @@
 <main-header></main-header>
+
 <ion-content padding>
-	<div class="ion-padding">
-		
+    <div class="main-cat">
 
-		<div class="slider-1">
-			<h5 class="product-heading"><span></span></h5>
-			<ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
-				<ion-slide *ngFor="let category of categories">
-					<div class="cst-slider-wrap">
-						<a href="#">
-							<ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider">
-							</ion-img>
-							<p class="cat-title">{{ category.title  }}</p>
-						</a>
-					</div>
-
-				</ion-slide>
-			</ion-slides>
-		</div>
-		
-	
-				
-        </div>
-        <div class="product-list">
-                <ion-grid>
-                    <ion-row>
-                        <ion-col size="6">
-                           <p class="mb0">Titel of the product</p>
-                        </ion-col>
-                        <ion-col size="6">
-                            <div class="list-detail">
-                              
-                                <div class="star-right">
-                                    <p><ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
-                                         </p>
-                                </div>
-                            </div>
-    
-                        </ion-col>
-    
-                    </ion-row>
-                    <ion-row>
-                            <ion-col size= "12">
-                               <p class="mb0">Titel of the product  of the second line...</p>
-                            </ion-col>
-                        
-        
-                        </ion-row>
-                        <ion-row>
-                            <ion-col size= "6">
-                               <p size class="mb0 blue"><span class="bold-blue blue">Preis : </span><span class="amount blue">12345</span></p>
-                            </ion-col>
-                            <ion-col size= "6">
-                                <p class="mb0"><span class="grey-bold">Größe:</span><span class="length">L</span>
-                             </ion-col>
-                        
-        
-                        </ion-row>
-                        <ion-row>
-                            <ion-col size= "6">
-                               <p class="mb0"><span class="grey-bold">Pay Pal:</span> <span class="amount">Ja</span></p>
-                            </ion-col>
-                            <ion-col size= "6">
-                                <p class="mb0"><span class="grey-bold">Abholung : </span> <span class="amount">Ja</span></p>
-                             </ion-col>
-                             <ion-col size= "6">
-                                <p class="mb0 grey-bold small-size">Hersteller:</p>
-                             </ion-col>
-                             <ion-col size= "6">
-                                 <p class="mb0">Specialized </p>
-                              </ion-col>
-                              <ion-col size= "6">
-                                <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
-                             </ion-col>
-                             <ion-col size= "6">
-                                 <p class="mb0">160mm </p>
-                              </ion-col>
-                        
-        
-                        </ion-row>
-    
-                </ion-grid>
-
-                <ion-item class="p0">
-                    <ion-textarea class="comments" placeholder="Beschreibung"></ion-textarea>
-                   </ion-item>
-
-                   <p class="text-center-doe">Verkaufer: <span class="grey-bold">Jhon Doe</span></p>
-<div class="main-btn">
-
-        <button ion-button icon-start block color="dark" class="button-login">
-
-                KONTAKTIEREN
-                  </button>
-</div>
-                   
-
-
-    <div class="google-add">
-        <ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img>
+	<div class="cat-name">Category Name</div>
+<p class="cat-pt-name">Premium Artikel</p>
     </div>
+    <div class="product-list">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image"></ion-img>
 
-    <div class="slider-1">
-        <h5 class="product-heading font-10">BEISPIELVIDEO<span></span></h5>
-        <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
-            <ion-slide *ngFor="let category of categories">
-                <div class="cst-slider-wrap">
-                    <a href="#">
+            </ion-col>
+            <ion-col size="6">
+                <div class="list-detail">
+                    <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                    <p class="price-prod-list">1234.99 € - VB</p>
+                    <p class="size-prod-list">Größe <span>L</span>
 
-                        <ion-img src="../assets/small-car-1.png" class="product-main-slider">
-                        </ion-img>
-                        <p class="cat-title">{{ category.title  }}</p>
-                    </a>
+                    </p>
+                    <div class="star-right">
+                        <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                    </div>
                 </div>
 
-            </ion-slide>
-        </ion-slides>
-    </div>
+            </ion-col>
 
+        </ion-row>
 
-    <ion-grid>
-         
-                <ion-row>
-                   
-                     <ion-col size= "6">
-                        <p class="mb0 grey-bold small-size">Hersteller:</p>
-                     </ion-col>
-                     <ion-col size= "6">
-                         <p class="mb0">Specialized </p>
-                      </ion-col>
-                      <ion-col size= "6">
-                        <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
-                     </ion-col>
-                     <ion-col size= "6">
-                         <p class="mb0">160mm </p>
-                      </ion-col>
-                
+    </ion-grid>
 
-                </ion-row>
-                <div id='map'></div>
+</div>
+    <div class="border-bottom"></div>
+    <div class="product-list">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image"></ion-img>
 
+                </ion-col>
+                <ion-col size="6">
+                    <div class="list-detail">
+                        <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                        <p class="price-prod-list">1234.99 € - VB</p>
+                        <p class="size-prod-list">Größe <span>L</span>
+
+                        </p>
+                        <div class="star-right">
+                            <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                        </div>
+                    </div>
+
+                </ion-col>
+
+            </ion-row>
 
         </ion-grid>
-    
-            </div>
 
+    </div>
+    <div class="product-list">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image"></ion-img>
 
+                </ion-col>
+                <ion-col size="6">
+                    <div class="list-detail">
+                        <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                        <p class="price-prod-list">1234.99 € - VB</p>
+                        <p class="size-prod-list">Größe <span>L</span>
 
+                        </p>
+                        <div class="star-right">
+                            <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                        </div>
+                    </div>
+
+                </ion-col>
+
+            </ion-row>
+
+        </ion-grid>
+
+    </div>
 </ion-content>
 <main-footer></main-footer>
   
