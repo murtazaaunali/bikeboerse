@@ -17,7 +17,7 @@
 
         </div>
         <ion-segment>
-            <ion-segment-button checked class="padding-0" >
+            <ion-segment-button checked class="padding-0">
                 <ion-label class="padding-0">ARTIKEL</ion-label>
             </ion-segment-button>
             <ion-segment-button class="padding-0">
@@ -30,67 +30,6 @@
                 <ion-label class="padding-0">HILFE</ion-label>
             </ion-segment-button>
         </ion-segment>
-<div class="product-list">
-        <ion-grid>
-            <ion-row>
-                <ion-col size="6">
-                    <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image"></ion-img>
-
-                </ion-col>
-                <ion-col size="6">
-                    <div class="list-detail">
-                    <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
-                    <p class="price-prod-list">1234.99 € - VB</p>
-                    <p class="size-prod-list">Größe <span>L</span></p>
-                    </div>
-
-                </ion-col>
-
-            </ion-row>
-
-        </ion-grid>
-    <div class="border-bottom">
-
-    </div>
-    <ion-grid>
-        <ion-row>
-            <ion-col size="6">
-
-                <div class="bottom-icon-list">
-                    <ion-row>
-                        <ion-col size="3">
-                            <ion-img [routerLink]="['/']" src="assets/icon-edit.png" class="product-icon-image"></ion-img>
-                        </ion-col>
-                        <ion-col size="3">
-                            <ion-img [routerLink]="['/']" src="assets/icon-stop.png" class="product-icon-image"></ion-img>
-                        </ion-col>
-                        <ion-col size="3">
-                            <ion-img [routerLink]="['/']" src="assets/icon-upload.png" class="product-icon-image"></ion-img>
-                        </ion-col>
-                        <ion-col size="3">
-                            <ion-img [routerLink]="['/']" src="assets/icon-delete.png" class="product-icon-image"></ion-img>
-                        </ion-col>
-
-                    </ion-row>
-                </div>
-            </ion-col>
-            <ion-col size="6">
-
-
-                    <ion-row>
-                        <ion-col size="12">
-                            <p class="last-orange text-center"><img src="assets/bedge.png">JETZT HERORHEBEN</p>
-                        </ion-col>
-
-                    </ion-row>
-
-            </ion-col>
-
-        </ion-row>
-
-    </ion-grid>
-</div>
-
         <div class="product-list">
             <ion-grid>
                 <ion-row>
@@ -100,7 +39,9 @@
                     </ion-col>
                     <ion-col size="6">
                         <div class="list-detail">
-                            <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                            <a href="#">
+                                <h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4>
+                            </a>
                             <p class="price-prod-list">1234.99 € - VB</p>
                             <p class="size-prod-list">Größe <span>L</span></p>
                         </div>
@@ -120,16 +61,87 @@
                         <div class="bottom-icon-list">
                             <ion-row>
                                 <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-edit.png" class="product-icon-image"></ion-img>
+                                    <ion-img [routerLink]="['/']" src="assets/icon-edit.png" class="product-icon-image">
+                                    </ion-img>
                                 </ion-col>
                                 <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-stop.png" class="product-icon-image"></ion-img>
+                                    <ion-img [routerLink]="['/']" src="assets/icon-stop.png" class="product-icon-image">
+                                    </ion-img>
                                 </ion-col>
                                 <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-upload.png" class="product-icon-image"></ion-img>
+                                    <ion-img [routerLink]="['/']" src="assets/icon-upload.png"
+                                        class="product-icon-image"></ion-img>
                                 </ion-col>
                                 <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-delete.png" class="product-icon-image"></ion-img>
+                                    <ion-img [routerLink]="['/']" src="assets/icon-delete.png"
+                                        class="product-icon-image"></ion-img>
+                                </ion-col>
+
+                            </ion-row>
+                        </div>
+                    </ion-col>
+                    <ion-col size="6">
+
+
+                        <ion-row>
+                            <ion-col size="12">
+                                <p class="last-orange text-center"><img src="assets/bedge.png">JETZT HERORHEBEN</p>
+                            </ion-col>
+
+                        </ion-row>
+
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-grid>
+        </div>
+
+        <div class="product-list">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image"></ion-img>
+
+                    </ion-col>
+                    <ion-col size="6">
+                        <div class="list-detail">
+                            <a href="#">
+                                <h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4>
+                            </a>
+                            <p class="price-prod-list">1234.99 € - VB</p>
+                            <p class="size-prod-list">Größe <span>L</span></p>
+                        </div>
+
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-grid>
+            <div class="border-bottom">
+
+            </div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="6">
+
+                        <div class="bottom-icon-list">
+                            <ion-row>
+                                <ion-col size="3">
+                                    <ion-img [routerLink]="['/']" src="assets/icon-edit.png" class="product-icon-image">
+                                    </ion-img>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <ion-img [routerLink]="['/']" src="assets/icon-stop.png" class="product-icon-image">
+                                    </ion-img>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <ion-img [routerLink]="['/']" src="assets/icon-upload.png"
+                                        class="product-icon-image"></ion-img>
+                                </ion-col>
+                                <ion-col size="3">
+                                    <ion-img [routerLink]="['/']" src="assets/icon-delete.png"
+                                        class="product-icon-image"></ion-img>
                                 </ion-col>
 
                             </ion-row>
@@ -154,3 +166,4 @@
     </div>
 
 </ion-content>
+<main-footer></main-footer>
