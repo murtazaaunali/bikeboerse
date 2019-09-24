@@ -3,10 +3,13 @@
     <ion-split-pane [when]="splitPaneState">
         <ion-menu side="end" contentId="content">
             <ion-content>
-                <div class="backicon"><img src="../assets/backicon.png" (click)="openFilter()"></div>
+                <div class="backicon"><img src="../assets/backicon.png" class="bcicon" (click)="openFilter()">
+                    <img src="../assets/tick.png" class="tickright">
+
+                </div>
 
                 <ion-list no-padding>
-                    <ion-item no-padding tappable routerDirection="root" >
+
                         <div class="row">
 
                             <div class="col">
@@ -45,7 +48,7 @@
                         </div>
                         <div class="clearfix"></div>
 
-                    </ion-item>
+
 
                 </ion-list>
 
@@ -53,11 +56,32 @@
                     <ion-list no-padding>
                         <p class="range-head">Preis</p>
                         <div class="row">
+                            <div class="range-custom">
+                                <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="euro" [min]="0"  [max]="2500" (ionChange)="onAgeChange($event)">
 
-                                <ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>
+                                </ion-range>
+                                <div class="slotleft" slot="start">€ {{euro?.lower}}</div>
+                                <div class="slotright" slot="end">€ {{euro?.upper}}</div>
+                            </div>
+                        </div>
 
+                        <p class="range-head">Umkreis eigrenzen</p>
+                        <div class="detail-range">PLZ 69181</div>
+                        <div class="row">
+                            <div class="range-custom">
+                                <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="km" [min]="0" [max]="400" (ionChange)="onAgeChange($event)">
+
+                                </ion-range>
+                                <div class="slotleft" slot="start">{{km?.lower}} km</div>
+                                <div class="slotright" slot="end">{{km?.upper}} km</div>
+                            </div>
                         </div>
                     </ion-list>
+                    <ion-list no-padding>
+                        <img src="../assets/g-image.jpg">
+
+                    </ion-list>
+
 
             </ion-content>
         </ion-menu>
@@ -70,10 +94,8 @@
 
         <div class="cat-name">Category Name</div>
         <p class="cat-pt-name">Premium Artikel</p>
-        <ion-button class="filter-button" (click)="openFilter()"  href="">
-            <ion-icon name="menu" class="my-filter">Filter</ion-icon>
+        <img src="../assets/filter.png" class="filter-button"(click)="openFilter()">
 
-        </ion-button>
     </div>
     <div class="product-list">
         <ion-grid>
@@ -134,6 +156,7 @@
         </ion-grid>
 
     </div>
+    <img src="../assets/google-add.png">
     <div class="product-list">
         <ion-grid>
             <ion-row>
