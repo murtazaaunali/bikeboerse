@@ -3,15 +3,62 @@
     <ion-split-pane [when]="splitPaneState">
         <ion-menu side="end" contentId="content">
             <ion-content>
-                <ion-button class="filter-button" (click)="openFilter()" color="primary" href="">
-                    <ion-icon name="options" slot="icon-only"></ion-icon>
-                </ion-button>
-                <ion-list>
-                    <ion-item tappable routerLink="/login" routerDirection="root">
-                        <ion-icon name="log-out" slot="start"></ion-icon>
-                        Logout
+                <div class="backicon"><img src="../assets/backicon.png" (click)="openFilter()"></div>
+
+                <ion-list no-padding>
+                    <ion-item no-padding tappable routerDirection="root" >
+                        <div class="row">
+
+                            <div class="col">
+
+                                <div class="tabs">
+                                    <div class="tab">
+                                        <input type="radio" id="rd1" name="rd">
+                                        <label class="tab-label" for="rd1">Hersteller</label>
+                                        <div class="tab-content">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
+                                        </div>
+                                    </div>
+                                    <div class="tab">
+                                        <input type="radio" id="rd2" name="rd">
+                                        <label class="tab-label" for="rd2">RahmengroBe</label>
+                                        <div class="tab-content">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+                                        </div>
+                                    </div>
+                                    <div class="tab">
+                                        <input type="radio" id="rd3" name="rd">
+                                        <label class="tab-label" for="rd4">Federweg</label>
+                                        <div class="tab-content">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+                                        </div>
+                                    </div>
+                                    <div class="tab">
+                                        <input type="radio" id="rd4" name="rd">
+                                        <label class="tab-label" for="rd4">LaufradgroBe</label>
+                                        <div class="tab-content">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
                     </ion-item>
+
                 </ion-list>
+
+
+                    <ion-list no-padding>
+                        <p class="range-head">Preis</p>
+                        <div class="row">
+
+                                <ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>
+
+                        </div>
+                    </ion-list>
+
             </ion-content>
         </ion-menu>
         <ion-router-outlet id="content" main>
@@ -23,8 +70,9 @@
 
         <div class="cat-name">Category Name</div>
         <p class="cat-pt-name">Premium Artikel</p>
-        <ion-button class="filter-button" (click)="openFilter()" color="primary" href="">
-            <ion-icon name="options" slot="icon-only"></ion-icon>
+        <ion-button class="filter-button" (click)="openFilter()"  href="">
+            <ion-icon name="menu" class="my-filter">Filter</ion-icon>
+
         </ion-button>
     </div>
     <div class="product-list">
