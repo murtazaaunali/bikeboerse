@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video.page.scss'],
 })
 export class VideoPage implements OnInit {
-
+  public splitPaneState: boolean = false;
   constructor() { }
   openMenu() {
     if (this.splitPaneState == false) {
