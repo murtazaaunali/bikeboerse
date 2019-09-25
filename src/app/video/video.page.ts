@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class VideoPage implements OnInit {
 
   constructor() { }
+  openMenu() {
+    if (this.splitPaneState == false) {
+        this.splitPaneState = true;
+    } else {
+        this.splitPaneState = false;
+    }
+    console.log(this.splitPaneState);
+}
 
   ngOnInit() {
   }
