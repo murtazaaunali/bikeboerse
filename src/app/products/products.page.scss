@@ -101,9 +101,10 @@ ion-menu[type="reveal"] {
 .filter-button {
   background: none !important;
   float: right;
-  top: 0px;
+  top: 13px;
   position: absolute;
   right: 17px;
+  width: 26px;
 }
 .filter-button-2 {
   .button-native{
@@ -182,6 +183,12 @@ input {
   margin-left: 15px;
   margin-right: 15px;
 }
+.range-custom {
+  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 
 // :checked
 input:checked {
@@ -203,7 +210,49 @@ input:checked {
   }
 }
 .backicon {
-  width: 14px;
+  width: 100%;
   margin-left: 5px;
   margin-bottom: 10px;
+  height: 30px;
+  padding-top: 10px;
+  img.bcicon {
+    float: left;
+    width: 12px;
+  }
+  img.tickright {
+    float: right;
+    width: 14px;
+    margin-right: 12px;
+  }
+}
+.slotleft {
+  float: left;
+  padding-left: 12px;
+  margin-top: -17px;
+}
+.slotright {
+  float: right;
+  margin-right: 12px;
+  margin-top: -17px;
+}
+.range-head {
+  padding-left: 9px;
+  margin-bottom: -11px;
+  margin-top: 20px;
+}
+.range-md .range-knob-handle .range-pin {
+  transform: translate3d(0, 0, 0) scale(1); }
+
+.range-md:not(.range-has-pin) .range-knob-handle .range-knob {
+  transform: scale(1);
+  background-color: #000;
+}
+
+.range-ios .range-knob-handle .range-pin {
+  transform: translate3d(0, 0, 0) scale(1); }
+.detail-range {
+  background: #fff;
+  padding: 6px 9px;
+  margin-top: 17px;
+  border: 1px solid #e9e9e9;
 }
