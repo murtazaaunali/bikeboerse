@@ -1,0 +1,143 @@
+
+
+    .grid {
+      padding: 0;
+    }
+  
+    .sender, .me {
+      .friend-img {
+        position: absolute;
+        border-radius: 40px;
+        width: 40px;
+        height: 40px;
+        // box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        border-radius: 5px;
+        margin: 0;
+      }
+    }
+  
+  
+    .sender {
+      p {
+        text-align: left;
+        background-color: #fff;
+        padding: 12px 10px;
+        border: 1px solid #d1d1d1;
+        line-height: 3rem;
+      }
+      .friend-img {
+        margin: 0 0;
+      }
+    }
+  
+  
+    .me {
+      .txt {
+        display: inline;
+        text-align: right;
+      }
+      .friend-img {
+        margin: 0 11px;
+      }
+      p {
+        background-color: #62c2e4;
+        color: #fff;
+        padding: 12px 10px;
+      }
+    }
+  
+    .text-input {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .sender-img {
+      
+      width: 30%;
+    }
+  
+    .box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 10px;
+  width: 90%;
+  float: right;
+}
+.boxleft {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 45px;
+  width: 90%;
+  float: left;
+}
+.sender-main-chat-white {
+  
+ 
+  
+}
+.sender-chat-grey{color:#555 !important;border:1px solid #ccc!important;background-color: #fff!important;
+  color: #555!important;border-radius: 5px;    line-height: 3rem;}
+  .date-time {
+    margin: 35px 0px;
+    text-align: center;
+
+    p{
+
+      color:#555;
+    }
+}
+.searchline{    
+  font-size: 11px;
+  color: #555555;
+  text-align: left;
+  margin-top: 10px;
+
+}
+.search-bar-video{
+  background: #fff !important;
+  border: 1px solid #555555 !important;
+  border-radius: 30px !important;
+  width: 100% !important;
+  font-size: 11px !important;
+  margin-top:10px;
+  padding-left: 40px !important;
+  height: 35px !important;
+  text-align: left;
+}
+.searchline-smalltext{
+  font-size: 9px;
+  color: #555555;
+  text-align: left;
+ 
+}
+.searchlineinput{
+
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-top:2rem;
+}
+.icon-correct{
+position:absolute;
+width:30px;
+height:23px;
+background-image:url("../../assets/correct.png");
+right: 4%;
+z-index: 9999;
+top: 16px;
+}
+.icon-chat-cam{position:absolute;
+  width:30px;
+  height:30px;
+  background-image:url("../../assets/chat-cam.png");
+  left: 2%;
+  z-index: 9999;
+  top: 12.5px;
+  background-repeat: no-repeat;}
+  .sender-main-chat-white,.sender-main-chat {
+    width: 100% !important;
+}
