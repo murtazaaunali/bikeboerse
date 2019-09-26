@@ -2,7 +2,64 @@
     float: left;
     width: 12px;
 }
-h2.text-primary.insert-done {
-    color: #555555;
-    font-size: 17px;
+
+.bg-white {
+    background: #fff;
+    padding: 10px 5px 5px 5px;
+    position: relative;
+    top: 0px;
+    z-index: 9999;
+    h2.text-primary.insert-done {
+        color: #555555;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 0px;
+        position: relative;
+        left: -10px;
+    }
+}
+ion-segment-button {
+    height: 34px;
+    min-height: 30px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    width: 50px;
+    min-width: 10px !important;
+    border: 1px solid #cacaca;
+    margin: 2px;
+    padding: 2px;
+    font-size: 12px !important;
+    border-radius: 4px;
+    color:#555555
+}
+ion-label.padding-0.sc-ion-label-md-h.sc-ion-label-md-s.md.hydrated {
+    font-size: 11px;
+}
+ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
+    margin-bottom: 20px;
+}
+.hr{border:1px solid #c3c3c3;width:60%;height:1px;margin:25px auto;}
+
+
+ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button-has-label-only.segment-button-checked.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant[_ngcontent-hvv-c1] {
+    background: #62c2e4;
+    color: #fff;
+}
+.btn-arrow{
+    width:100%;
+    text-align: center;
+}
+.button-login {
+    width:80%;
+    border: none;
+    border-radius: 160px;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 18px !important;
+    font-size: 16px;
+    background: #62c2e4;
+    // margin-top:20%;
+  }
+  .w15{
+    width: 15px;
 }
