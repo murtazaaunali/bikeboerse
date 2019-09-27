@@ -6,10 +6,7 @@
   
     .sender, .me {
       .friend-img {
-        position: absolute;
-        border-radius: 40px;
-        width: 40px;
-        height: 40px;
+      
         // box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       }
       p {
@@ -20,13 +17,13 @@
   
   
     .sender {
-      p {
+   
         text-align: left;
         background-color: #fff;
         padding: 12px 10px;
         border: 1px solid #d1d1d1;
         line-height: 3rem;
-      }
+    
       .friend-img {
         margin: 0 0;
       }
@@ -39,12 +36,12 @@
         text-align: right;
       }
       .friend-img {
-        margin: 0 11px;
+        
       }
       p {
         background-color: #62c2e4;
         color: #fff;
-        padding: 12px 10px;
+     
       }
     }
   
@@ -53,32 +50,24 @@
       border-radius: 5px;
       padding: 5px;
     }
-    .sender-img {
-      
-      width: 30%;
-    }
+   
   
     .box {
-  display: flex;
-  align-items: flex-start;
+ 
+  align-items: flex-end;
   justify-content: flex-end;
   margin-top: 10px;
-  width: 90%;
-  float: right;
+  display: flex !important;
+  justify-content: flex-end !important;
 }
 .boxleft {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: 45px;
-  width: 90%;
-  float: left;
-}
-.sender-main-chat-white {
-  
- 
   
 }
+
 .sender-chat-grey{color:#555 !important;border:1px solid #ccc!important;background-color: #fff!important;
   color: #555!important;border-radius: 5px;    line-height: 3rem;}
   .date-time {
@@ -138,6 +127,38 @@ top: 16px;
   z-index: 9999;
   top: 12.5px;
   background-repeat: no-repeat;}
-  .sender-main-chat-white,.sender-main-chat {
-    width: 100% !important;
+  .sender-main-chat-white {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding: 10px;
+    position: relative;
+}
+.sender-main-chat {
+  width: 100% !important;
+}
+.message-wrap {
+  flex: 1 1 auto;
+  // padding: 1.25rem;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+.sender-chat {
+  background: #62c2e4;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 10px;
+  position: relative;
+  color: #fff;
+  overflow-wrap: break-word;
+
+}
+.sender-img{
+  /* width: 30%; */
+  width: 40px;
+  height: 40px;
 }
