@@ -10,77 +10,79 @@
 
                 <ion-list no-padding>
 
-                        <div class="row">
+                    <div class="row">
 
-                            <div class="col">
+                        <div class="col">
 
-                                <div class="tabs">
-                                    <div class="tab">
-                                        <input type="radio" id="rd1" name="rd">
-                                        <label class="tab-label" for="rd1">Hersteller</label>
-                                        <div class="tab-content">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
-                                        </div>
+                            <div class="tabs">
+                                <div class="tab">
+                                    <input type="radio" id="rd1" name="rd">
+                                    <label class="tab-label" for="rd1">Hersteller</label>
+                                    <div class="tab-content">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, facilis.
                                     </div>
-                                    <div class="tab">
-                                        <input type="radio" id="rd2" name="rd">
-                                        <label class="tab-label" for="rd2">RahmengroBe</label>
-                                        <div class="tab-content">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
-                                        </div>
+                                </div>
+                                <div class="tab">
+                                    <input type="radio" id="rd2" name="rd">
+                                    <label class="tab-label" for="rd2">RahmengroBe</label>
+                                    <div class="tab-content">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
                                     </div>
-                                    <div class="tab">
-                                        <input type="radio" id="rd3" name="rd">
-                                        <label class="tab-label" for="rd4">Federweg</label>
-                                        <div class="tab-content">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
-                                        </div>
+                                </div>
+                                <div class="tab">
+                                    <input type="radio" id="rd3" name="rd">
+                                    <label class="tab-label" for="rd4">Federweg</label>
+                                    <div class="tab-content">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
                                     </div>
-                                    <div class="tab">
-                                        <input type="radio" id="rd4" name="rd">
-                                        <label class="tab-label" for="rd4">LaufradgroBe</label>
-                                        <div class="tab-content">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
-                                        </div>
+                                </div>
+                                <div class="tab">
+                                    <input type="radio" id="rd4" name="rd">
+                                    <label class="tab-label" for="rd4">LaufradgroBe</label>
+                                    <div class="tab-content">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
 
 
 
                 </ion-list>
 
 
-                    <ion-list no-padding>
-                        <p class="range-head">Preis</p>
-                        <div class="row">
-                            <div class="range-custom">
-                                <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="euro" [min]="0"  [max]="2500" (ionChange)="onAgeChange($event)">
+                <ion-list no-padding>
+                    <p class="range-head">Preis</p>
+                    <div class="row">
+                        <div class="range-custom">
+                            <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="euro" [min]="0" [max]="2500"
+                                (ionChange)="onAgeChange($event)">
 
-                                </ion-range>
-                                <div class="slotleft" slot="start">€ {{euro?.lower}}</div>
-                                <div class="slotright" slot="end">€ {{euro?.upper}}</div>
-                            </div>
+                            </ion-range>
+                            <div class="slotleft" slot="start">€ {{euro?.lower}}</div>
+                            <div class="slotright" slot="end">€ {{euro?.upper}}</div>
                         </div>
+                    </div>
 
-                        <p class="range-head">Umkreis eigrenzen</p>
-                        <div class="detail-range">PLZ 69181</div>
-                        <div class="row">
-                            <div class="range-custom">
-                                <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="km" [min]="0" [max]="400" (ionChange)="onAgeChange($event)">
+                    <p class="range-head">Umkreis eigrenzen</p>
+                    <div class="detail-range">PLZ 69181</div>
+                    <div class="row">
+                        <div class="range-custom">
+                            <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="km" [min]="0" [max]="400"
+                                (ionChange)="onAgeChange($event)">
 
-                                </ion-range>
-                                <div class="slotleft" slot="start">{{km?.lower}} km</div>
-                                <div class="slotright" slot="end">{{km?.upper}} km</div>
-                            </div>
+                            </ion-range>
+                            <div class="slotleft" slot="start">{{km?.lower}} km</div>
+                            <div class="slotright" slot="end">{{km?.upper}} km</div>
                         </div>
-                    </ion-list>
-                    <ion-list no-padding>
-                        <img src="../assets/g-image.jpg">
+                    </div>
+                </ion-list>
+                <ion-list no-padding>
+                    <img src="../assets/g-image.jpg">
 
-                    </ion-list>
+                </ion-list>
 
 
             </ion-content>
@@ -94,7 +96,7 @@
 
         <div class="cat-name">Category Name</div>
         <p class="cat-pt-name">Premium Artikel</p>
-        <img src="../assets/filter.png" class="filter-button"(click)="openFilter()">
+        <img src="../assets/filter.png" class="filter-button" (click)="openFilter()">
 
     </div>
     <div class="product-list">
@@ -129,7 +131,7 @@
     <div class="border-bottom"></div>
     <div class="product-list">
         <ion-grid>
-            <ion-row>
+            <ion-col>
                 <ion-col size="6">
                     <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image">
                     </ion-img>
@@ -151,7 +153,7 @@
 
                 </ion-col>
 
-            </ion-row>
+            </ion-col>
 
         </ion-grid>
 

@@ -12,7 +12,7 @@ export class CategoriesService {
     constructor(private httpClient: HttpClient) { }
 
     public getCategories() {
-        return this.httpClient.get(this.baseUrl + '/product/readcat.php')
+        return this.httpClient.get(this.baseUrl + '/product/readallcat.php?limit=0,10&orderby=title')
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getCategories', []))

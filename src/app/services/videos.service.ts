@@ -12,7 +12,7 @@ export class VideosService {
     constructor(private httpClient: HttpClient) { }
 
     public getVideos() {
-        return this.httpClient.get(this.baseUrl + '/product/videos.php')
+        return this.httpClient.get(this.baseUrl + '/product/getallvideos.php?limit=0,10&orderby=title')
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getVideos', []))

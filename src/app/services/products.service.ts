@@ -10,32 +10,49 @@ export class ProductsService {
     baseUrl: string = "https://bikeboerse.com/BikeApi/ios";
     constructor(private httpClient: HttpClient) { }
 
-    public getProducts(): Observable<any> {
-        return this.httpClient.get(this.baseUrl + '/product/read.php?limit=0,1')
+    public getProducts(limit = '0,10', order = 'title'): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/product/readproductwithlimitorder.php?limit=' + limit + '&orderby=' + order)
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getProducts', []))
             );
     }
 
-    public getProduct(productId: number) { }
+    public getProduct(productId: number): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/product/readbyid.php?id=' + productId)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('getProducts', []))
+            );
+    }
 
-    public createProduct(product: ProductModel) { }
+    public createProduct(product: ProductModel) {
+        return this.httpClient.post(this.baseUrl + '/product/insertproduct.php', product)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('createProduct', []))
+            );
+    }
 
-    public updateProduct(product: ProductModel) { }
+    public updateProduct(product: ProductModel) {
+        return this.httpClient.put(this.baseUrl + '/product/update.php' + product.id, product)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('createProduct', []))
+            );
+    }
 
-    public deleteProduct(productId: number) { }
+    /*  public deleteProduct(productId: number) {
+         return this.httpClient.delete(this.baseUrl + '/products/' + productId)
+             .catch((e) => {
+                 console.error(e);
+             });
+     } */
 
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
-
-            // TODO: send the error to remote logging infrastructure
             console.error(error); // log to console instead
-
-            // TODO: better job of transforming error for user consumption
-            this.log(`${operation} failed: ${error.message}`);
-
-            // Let the app keep running by returning an empty result.
+            this.log(operation + "failed:" + error.message);
             return of(result as T);
         };
     }

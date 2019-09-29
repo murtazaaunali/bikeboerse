@@ -3,14 +3,13 @@
 	<div class="ion-padding">
 		<div class="product-slider">
 			<h5 class="product-heading">Premiumanzeigen</h5>
-			<ion-slides pager [pager]="false" [scrollbar]="true" [mode]="ios">
-				<ion-slide *ngFor="let product of products">
-					<ion-img [routerLink]="['/']" [src]="product.filename" class="product-main-slider"></ion-img>
+			<ion-slides *ngIf="productsSlides" pager [pager]="false" [scrollbar]="true" [mode]="ios">
+				<ion-slide *ngFor="let product of productsSlides">
+					<ion-img [routerLink]="'/product/' + product.id" [src]="product.filename"
+						class="product-main-slider"></ion-img>
 					<div class="bg-title">
-						<a href="#">
-							<p class="product-slider-title">{{ product.title }}</p>
-							<p class="slider-price">{{ product.price }} €</p>
-						</a>
+						<p class="product-slider-title">{{ product.title }}</p>
+						<p class="slider-price">{{ product.price }} €</p>
 					</div>
 				</ion-slide>
 			</ion-slides>
@@ -22,7 +21,8 @@
 				<ion-slide *ngFor="let category of categories">
 					<div class="cst-slider-wrap">
 						<a href="#">
-							<ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider">
+							<ion-img [routerLink]="'/category/' + category.id" src="assets/small-car-1.png"
+								class="product-main-slider">
 							</ion-img>
 							<p class="cat-title">{{ category.title  }}</p>
 						</a>
@@ -36,11 +36,13 @@
 		</div>
 		<div class="slider-2">
 			<h5 class="product-heading">Neuste Artikel<span></span></h5>
-			<ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts2" [mode]="ios">
-				<ion-slide *ngFor="let product of products">
+			<ion-slides *ngIf="productsLatests" #categorySlider [pager]="false" [scrollbar]="true"
+				[options]="slideOpts2" [mode]="ios">
+				<ion-slide *ngFor="let product of productsLatests">
 					<div class="cst-slider-wrap">
 						<a href="#">
-							<ion-img [routerLink]="['/']" [src]="product.filename" class="product-main-slider">
+							<ion-img [routerLink]="'/product/' + product.id" [src]="product.filename"
+								class="product-main-slider">
 							</ion-img>
 							<div class="main-bottom-slider">
 								<p class="slider-price">{{ product.price }} €</p>
@@ -56,7 +58,7 @@
 			<h5 class="product-heading">Neuste User videos<span></span></h5>
 			<ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts3" [mode]="ios">
 				<ion-slide *ngFor="let video of videos">
-					<ion-img [routerLink]="['/']" src="assets/video-bg.png"></ion-img>
+					<ion-img [routerLink]="'/video/' + video.id" [src]="video.video_thumb"></ion-img>
 				</ion-slide>
 			</ion-slides>
 		</div>

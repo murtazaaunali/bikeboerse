@@ -21,16 +21,25 @@ export class HomePage {
     slideOpts3: any = {
         slidesPerView: 1
     };
-    products: ProductModel[];
+    productsSlides: ProductModel[];
+    productsLatests: ProductModel[];
 
     categories: Category[];
 
     videos: Video[];
 
     constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private videosService: VideosService) {
-        this.productsService.getProducts().subscribe(products => {
-            this.products = products.records;
-            console.log(this.products);
+        
+        // Get products for Slider 
+        this.productsService.getProducts('0, 5', 'title').subscribe(products => {
+            this.productsSlides = products.records;
+            console.log(this.productsSlides);
+        });
+        
+        // Get latest products 
+        this.productsService.getProducts('0, 10', 'price').subscribe(products => {
+            this.productsLatests = products.records;
+            console.log(this.productsLatests);
         });
 
         this.categoriesService.getCategories().subscribe(categories => {
