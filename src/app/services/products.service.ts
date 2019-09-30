@@ -26,6 +26,14 @@ export class ProductsService {
             );
     }
 
+    public getProductsByCategory(categoryId: number): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/product/readproductbycatId.php?id=' + categoryId)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('getProducts', []))
+            );
+    }
+
     public createProduct(product: ProductModel) {
         return this.httpClient.post(this.baseUrl + '/product/insertproduct.php', product)
             .pipe(

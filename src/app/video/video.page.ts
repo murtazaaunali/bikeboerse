@@ -15,9 +15,6 @@ export class VideoPage implements OnInit {
             this.splitPaneState = false;
         }
         console.log(this.splitPaneState);
-
-        this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-        console.log('product id:' + this.id);
     }
 
     ngOnInit() {

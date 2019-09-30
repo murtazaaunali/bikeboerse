@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'add-product', loadChildren: './add-product/add-product.module#AddProductPageModule' },
   { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
-  { path: 'video/:id', loadChildren: './video/video.module#VideoPageModule' },
+  { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
   { path: 'edit-product', loadChildren: './edit-product/edit-product.module#EditProductPageModule' },
 ];
 

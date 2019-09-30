@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from './../services/products.service';
+import { CategoriesService } from './../services/categories.service';
+import { ProductModel } from '../models/product-model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-products',
@@ -7,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsPage implements OnInit {
     public splitPaneState: boolean = false;
-    constructor() { }
+    public categoryId: number;
+    products: ProductModel[];
+    constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private route: ActivatedRoute) {
+        this.categoryId = parseInt(this.route.snapshot.paramMap.get('id'));
+        
+        this.categoriesService.getProductsByCategory(this.categoryId).subscribe(products => {
+            this.products = products.records;
+            console.log(this.products);
+        });
+        
+        this.productsService.getProductsByCategory(this.categoryId).subscribe(products => {
+            this.products = products.records;
+            console.log(this.products);
+        });
+    }
 
     openFilter() {
         if (this.splitPaneState == false) {
