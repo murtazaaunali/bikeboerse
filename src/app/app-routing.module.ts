@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'my-products', loadChildren: './my-products/my-products.module#MyProductsPageModule' },
   { path: 'premium-options', loadChildren: './premium-options/premium-options.module#PremiumOptionsPageModule' },
   { path: 'premium-option', loadChildren: './premium-option/premium-option.module#PremiumOptionPageModule' },
-  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' },
+  { path: 'products/:categoryid', loadChildren: './products/products.module#ProductsPageModule' },
   { path: 'wishlist', loadChildren: './wishlist/wishlist.module#WishlistPageModule' },
   { path: 'policies', loadChildren: './policies/policies.module#PoliciesPageModule' },
   { path: 'my-account', loadChildren: './my-account/my-account.module#MyAccountPageModule' },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'add-product', loadChildren: './add-product/add-product.module#AddProductPageModule' },
   { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
-  { path: 'video', loadChildren: './video/video.module#VideoPageModule' },
+  { path: 'video/:id', loadChildren: './video/video.module#VideoPageModule' },
   { path: 'edit-product', loadChildren: './edit-product/edit-product.module#EditProductPageModule' },
 ];
 

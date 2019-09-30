@@ -11,15 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductsPage implements OnInit {
     public splitPaneState: boolean = false;
-    public categoryId: number;
+    public categoryId: number = 0;
     products: ProductModel[];
     constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private route: ActivatedRoute) {
-        this.categoryId = parseInt(this.route.snapshot.paramMap.get('id'));
-        
-        this.categoriesService.getProductsByCategory(this.categoryId).subscribe(products => {
-            this.products = products.records;
-            console.log(this.products);
-        });
+        this.categoryId = parseInt(this.route.snapshot.paramMap.get('categoryid'));
         
         this.productsService.getProductsByCategory(this.categoryId).subscribe(products => {
             this.products = products.records;
