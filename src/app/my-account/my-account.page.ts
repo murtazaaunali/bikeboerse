@@ -20,13 +20,13 @@ export class MyAccountPage implements OnInit {
         private actionSheetController: ActionSheetController, private toastController: ToastController,
         private storage: Storage, private platform: Platform, private loadingController: LoadingController,
         private ref: ChangeDetectorRef, private filePath: FilePath) {
-        /* this.authenticationService.authenticationState.subscribe(state => {
+        this.authenticationService.authenticationState.subscribe(state => {
             if (!state) {
                 this.router.navigate(['login']);
             } else {
                 this.router.navigate(['my-account']);
             }
-        }); */
+        });
     }
 
     ngOnInit() {
