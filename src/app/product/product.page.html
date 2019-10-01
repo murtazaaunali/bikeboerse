@@ -1,60 +1,61 @@
 <main-header></main-header>
-<ion-content padding>
-  <div class="ion-padding">
+<ion-content>
+  
 
-
-    <div class="slider-1">
-      <h5 class="product-heading"><span></span></h5>
-      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
-        <ion-slide *ngFor="let category of categories">
-          <div class="cst-slider-wrap">
-            <a href="#">
-              <ion-img [routerLink]="['/']" src="assets/small-car-1.png" class="product-main-slider">
-              </ion-img>
-              <p class="cat-title">{{ category.title  }}</p>
-            </a>
+        <div class="product-slider relative">
+            <div class="backicon"><img src="../assets/backicon.png" class="bcicon" (click)="openFilter()">
+            
           </div>
+            <ion-slides [options]="{pagination: true}">
+              <ion-slide>
+              <img src="../assets/small-car-1.png">
+              <img src="../assets/video-bg.png">
+              <img src="../assets/small-car-1.png">
+                <div class="bg-title">
+      
+               
+                </div>
+              </ion-slide>
+            </ion-slides>
+          </div>
+      
 
-        </ion-slide>
-      </ion-slides>
-    </div>
 
 
-
-  </div>
+  
   <div class="product-list">
     <ion-grid>
       <ion-row>
-        <ion-col size="6">
-          <p class="mb0">Titel of the product</p>
+        <ion-col size="11">
+          <p class="mb0 black-title">Titel of the product</p>
+          <p class="mb0 black-title">Titel of the product of the second line...</p>
         </ion-col>
-        <ion-col size="6">
+        <ion-col size="1">
           <div class="list-detail">
 
             <div class="star-right">
               <p>
-                <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                <ion-img [routerLink]="['/']" src="../assets/star.png"></ion-img>
               </p>
             </div>
           </div>
 
         </ion-col>
+       
 
       </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <p class="mb0">Titel of the product of the second line...</p>
-        </ion-col>
+     
+        
 
 
-      </ion-row>
+    
       <ion-row>
         <ion-col size="6">
-          <p size class="mb0 blue"><span class="bold-blue blue">Preis : </span><span class="amount blue">12345</span>
+          <p size class="mb0 blue"><span class="grey-bold">Preis : </span><span class="amount elementblue">12345</span>
           </p>
         </ion-col>
         <ion-col size="6">
-          <p class="mb0"><span class="grey-bold">Größe:</span><span class="length">L</span>
+          <p class="mb0"><span class="grey-bold">Größe:</span><span class="length elementblue">L</span>
         </ion-col>
 
 
@@ -68,16 +69,14 @@
         </ion-col>
         <ion-col size="6">
           <p class="mb0 grey-bold small-size">Hersteller:</p>
+          <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
+
         </ion-col>
         <ion-col size="6">
           <p class="mb0">Specialized </p>
-        </ion-col>
-        <ion-col size="6">
-          <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
-        </ion-col>
-        <ion-col size="6">
           <p class="mb0">160mm </p>
         </ion-col>
+       
 
 
       </ion-row>
@@ -103,47 +102,84 @@
       <ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img>
     </div>
 
-    <div class="slider-1">
-      <h5 class="product-heading font-10">BEISPIELVIDEO<span></span></h5>
-      <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts" [mode]="ios">
-        <ion-slide *ngFor="let category of categories">
-          <div class="cst-slider-wrap">
-            <a href="#">
-
-              <ion-img src="../assets/small-car-1.png" class="product-main-slider">
-              </ion-img>
-              <p class="cat-title">{{ category.title  }}</p>
-            </a>
+    <div class="main-video" padding>
+        <div class="slider-1" >
+            <h5 class="product-heading font-10">BEISPIELVIDEO</h5>
+            <ion-slides>
+              <ion-slide>
+                <div class="cst-slider-wrap">
+             
+      
+                     
+                      <img src="../assets/video-bg.png">
+                     
+               
+                </div>
+      
+              </ion-slide>
+            </ion-slides>
           </div>
-
-        </ion-slide>
-      </ion-slides>
-    </div>
-
-
+          
     <ion-grid>
 
-      <ion-row>
+        <ion-row>
+  
+          <ion-col size="6">
+            <p class="mb0 grey-bold small-size">Hersteller:</p>
+          </ion-col>
+          <ion-col size="6">
+            <p class="mb0">Specialized </p>
+          </ion-col>
+          <ion-col size="6">
+            <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
+          </ion-col>
+          <ion-col size="6">
+            <p class="mb0">160mm </p>
+          </ion-col>
+  
+  
+        </ion-row>
+      
+  
+  
+      </ion-grid>
+    </div>
+    <div id='map'>
+        <img src="../assets/g-image.jpg">
+        
+                </div>
+ 
+                <div class="slider-2" padding>
+                    <h5 class="product-heading">Neuste Artikel<span></span></h5>
+                    <ion-slides>
+                      <ion-slide >
+                        <div class="cst-slider-wrap">
+                          <a href="#">
+                        
+                            <img src="../assets/video-bg.png"  class="product-main-slider">
+                            <div class="main-bottom-slider">
+                              <p class="slider-price">123123123 €</p>
+                              <p class="slider-price">M</p>
+                              <p class="product-slider-title">Lorem Ipsum</p>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="cst-slider-wrap">
+                            <a href="#">
+                          
+                              <img src="../assets/video-bg.png"  class="product-main-slider">
+                              <div class="main-bottom-slider">
+                                <p class="slider-price">123123123 €</p>
+                                <p class="slider-price">M</p>
+                                <p class="product-slider-title">Lorem Ipsum</p>
+                              </div>
+                            </a>
+                          </div>
+                      </ion-slide>
+                    </ion-slides>
+                  </div>
 
-        <ion-col size="6">
-          <p class="mb0 grey-bold small-size">Hersteller:</p>
-        </ion-col>
-        <ion-col size="6">
-          <p class="mb0">Specialized </p>
-        </ion-col>
-        <ion-col size="6">
-          <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
-        </ion-col>
-        <ion-col size="6">
-          <p class="mb0">160mm </p>
-        </ion-col>
 
-
-      </ion-row>
-      <div id='map'></div>
-
-
-    </ion-grid>
 
   </div>
 </ion-content>
