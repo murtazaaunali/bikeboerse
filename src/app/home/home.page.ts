@@ -31,13 +31,13 @@ export class HomePage {
     constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private videosService: VideosService) {
         
         // Get products for Slider 
-        this.productsService.getProducts('0, 5', 'title').subscribe(products => {
+        this.productsService.getProducts('0,10', 'online_from').subscribe(products => {
             this.productsSlides = products.records;
             console.log(this.productsSlides);
         });
         
         // Get latest products 
-        this.productsService.getProducts('0, 10', 'price').subscribe(products => {
+        this.productsService.getProducts('0,10', 'user').subscribe(products => {
             this.productsLatests = products.records;
             console.log(this.productsLatests);
         });

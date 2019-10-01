@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './../services/products.service';
+import { CategoriesService } from './../services/categories.service';
 import { ProductModel } from '../models/product-model';
 
 @Component({
@@ -10,7 +11,13 @@ import { ProductModel } from '../models/product-model';
 export class SearchPage implements OnInit {
     searchTerm: string = "";
     products: ProductModel[];
-    constructor(private productsService: ProductsService) { }
+    categories: any;
+    constructor(private productsService: ProductsService, private categoriesService: CategoriesService) {
+        this.categoriesService.getCategories().subscribe(categories => {
+            this.categories = categories['records'];
+            console.log(this.categories);
+        });
+    }
 
     setFilteredItems() {
         // add loading

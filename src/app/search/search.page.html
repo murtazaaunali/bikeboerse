@@ -1,140 +1,36 @@
 <main-header></main-header>
 <ion-content>
   <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" (ionClear)="clearResults()"></ion-searchbar>
-<div *ngIf="products" >
-  <h2 class="main-title text-center">Search Result</h2>
-  <ion-grid>
-    <ion-row *ngFor="let product of products" >
-      <ion-col size="6">
-        <ion-img [routerLink]="['/']" src="assets/prod-list.jpg" class="product-list-image">
-        </ion-img>
-      </ion-col>
-      <ion-col size="6">
-        <div class="list-detail">
-          <a href="#">
-            <h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4>
-          </a>
-          <p class="price-prod-list">1234.99 € - VB</p>
-          <p class="size-prod-list">Größe <span>L</span>
-
-          </p>
-          <div class="star-right">
-            <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div *ngIf="products">
+    <h2 class="main-title text-center">Search Result</h2>
+    <div class="product-list" *ngFor="let product of products">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div class="list-detail">
+              <a [routerLink]="'/product/' + product.id">
+                <h4 class="product-title-list">{{product.title}}</h4>
+              </a>
+              <p class="price-prod-list">{{product.price}} € - VB</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
   <h2 class="main-title text-center">Alle Bikes</h2>
   <ion-grid>
     <ion-row>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
+      <ion-col *ngFor="let category of categories" size="3">
+        <a class="search-fields" [routerLink]="'/products/' + category.id">
           <div class="bg-search-blue">
-            203
+            {{category.TotalProduct}}
           </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
+          <p class="search-query">{{category.title}}</p>
         </a>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-    </ion-row>
-
-    <div class="border-bottom">
-
-    </div>
-    <h2 class="main-title text-center">Sonstiges</h2>
-    <ion-row>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-      <ion-col size="3">
-        <a class="search-fields" href="#">
-          <div class="bg-search-blue">
-            203
-          </div>
-          <p class="search-query">Hardtail</p>
-        </a>
-      </ion-col>
-    </ion-row>
+    <div class="border-bottom"></div>
   </ion-grid>
 </ion-content>
 <main-footer></main-footer>

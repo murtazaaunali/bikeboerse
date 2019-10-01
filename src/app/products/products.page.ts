@@ -22,6 +22,10 @@ export class ProductsPage implements OnInit {
         });
     }
 
+    addToWishlist() {
+        console.log("Hello!");
+    }
+
     openFilter() {
         if (this.splitPaneState == false) {
             this.splitPaneState = true;

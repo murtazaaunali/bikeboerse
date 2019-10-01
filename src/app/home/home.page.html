@@ -8,8 +8,8 @@
 					<ion-img [routerLink]="'/product/' + product.id" [src]="product.filename"
 						class="product-main-slider"></ion-img>
 					<div class="bg-title">
-						<p class="product-slider-title">{{ product.title }}</p>
-						<p class="slider-price">{{ product.price }} €</p>
+						<p class="product-slider-title">{{product.title}}</p>
+						<p class="slider-price">{{product.price}} €</p>
 					</div>
 				</ion-slide>
 			</ion-slides>
@@ -21,7 +21,7 @@
 				<ion-slide *ngFor="let category of categories">
 					<div class="cst-slider-wrap">
 						<a href="#">
-							<ion-img [routerLink]="'/products/' + category.id" src="assets/small-car-1.png"
+							<ion-img [routerLink]="'/products/' + category.id" [src]="category.filename"
 								class="product-main-slider">
 							</ion-img>
 							<p class="cat-title">{{ category.title  }}</p>
@@ -46,7 +46,7 @@
 							</ion-img>
 							<div class="main-bottom-slider">
 								<p class="slider-price">{{ product.price }} €</p>
-								<p class="slider-price">M</p>
+								<p class="slider-size">{{product.size}}</p>
 								<p class="product-slider-title">{{ product.title }}</p>
 							</div>
 						</a>
