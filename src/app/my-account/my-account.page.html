@@ -1,37 +1,10 @@
 <main-header></main-header>
 <ion-content padding>
 	<!-- Logo -->
-	<div padding-horizontal text-center class="animated fadeInDown register-account">
-		<div class="backicon"><img src="../assets/backicon.png"></div>
-		<div class="">
-			<div class="main-image"><img src="../assets/avatar-image.png">
-				<span class="cam-image" (click)="selectImage()"><img class="cam-img"
-						src="../assets/cam-icon.png"></span>
-			</div>
-			<h2 ion-text class="text-primary text-register">
-				John Doe
-			</h2>
-			<div [routerLink]="['/settings']" class="pull-right settings">
-				<img src="../assets/settings.png">
-			</div>
-		</div>
-	</div>
-	<!-- Label only -->
-	<ion-segment>
-		<ion-button checked class="padding-0" [routerLink]="['/my-products']">
-			<ion-label class="padding-0">ARTIKEL</ion-label>
-		</ion-button>
-		<ion-button class="padding-0" [routerLink]="['/wishlist']">
-			<ion-label class="padding-0">MERKLISTE</ion-label>
-		</ion-button>
-		<ion-button class="padding-0">
-			<ion-label class="padding-0">KONTO</ion-label>
-		</ion-button>
-		<ion-button class="padding-0">
-			<ion-label class="padding-0">HILFE</ion-label>
-		</ion-button>
-	</ion-segment>
-
+	<account-userinfo></account-userinfo>
+	<!-- Header -->
+	<myaccount-header></myaccount-header>
+	<!-- /Header -->
 	<button class="myAccountbtn">Rechnungen</button>
 	<button class="myAccountbtn">Nickname ändern</button>
 	<button class="myAccountbtn">Passwort ändern</button>

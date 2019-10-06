@@ -13,11 +13,15 @@ export class ProductsPage implements OnInit {
     public splitPaneState: boolean = false;
     public categoryId: number = 0;
     products: ProductModel[];
+    categories: any;
+    category: any;
+
     constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private route: ActivatedRoute) {
         this.categoryId = parseInt(this.route.snapshot.paramMap.get('categoryid'));
-        
+
         this.productsService.getProductsByCategory(this.categoryId).subscribe(products => {
             this.products = products.records;
+            this.category = this.products[0].category_name;
             console.log(this.products);
         });
     }

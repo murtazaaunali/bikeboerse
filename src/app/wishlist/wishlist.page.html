@@ -2,34 +2,16 @@
 <ion-content>
     <div class="ion-padding">
         <div padding-horizontal text-center class="animated fadeInDown register-account">
-
             <div class="backicon"><img src="../assets/backicon.png"></div>
             <div class="">
-                <div class="main-image"><img src="../assets/avatar-image.png">
-                   
-                </div>
+                <div class="main-image"><img src="../assets/avatar-image.png"></div>
                 <h2 ion-text class="text-primary text-register">
                     John Doe
                 </h2>
                 <div class="pull-right settings"><img src="../assets/settings.png"></div>
             </div>
-
-
         </div>
-        <ion-segment>
-            <ion-segment-button checked class="padding-0" >
-                <ion-label class="padding-0">ARTIKEL</ion-label>
-            </ion-segment-button>
-            <ion-segment-button class="padding-0">
-                <ion-label class="padding-0">MERKLISTE</ion-label>
-            </ion-segment-button>
-            <ion-segment-button class="padding-0">
-                <ion-label class="padding-0">ACCOUNT</ion-label>
-            </ion-segment-button>
-            <ion-segment-button class="padding-0">
-                <ion-label class="padding-0">HILFE</ion-label>
-            </ion-segment-button>
-        </ion-segment>
+        <myaccount-header></myaccount-header>
         <div class="product-list">
             <ion-grid>
                 <ion-row>
@@ -39,12 +21,16 @@
                     </ion-col>
                     <ion-col size="6">
                         <div class="list-detail">
-                            <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                            <a href="#">
+                                <h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4>
+                            </a>
                             <p class="price-prod-list">1234.99 € - VB</p>
                             <p class="size-prod-list">Größe <span>L</span></p>
                             <div class="star-right">
-                                <p><ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
-                                    Entfernen  </p>
+                                <p>
+                                    <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                                    Entfernen
+                                </p>
                             </div>
                         </div>
 
@@ -65,12 +51,16 @@
                     </ion-col>
                     <ion-col size="6">
                         <div class="list-detail">
-                            <a href="#"><h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4></a>
+                            <a href="#">
+                                <h4 class="product-title-list">Product Title Langer titel zweite zeile Title </h4>
+                            </a>
                             <p class="price-prod-list">1234.99 € - VB</p>
                             <p class="size-prod-list">Größe <span>L</span></p>
                             <div class="star-right">
-                                <p><ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
-                                    Entfernen  </p>
+                                <p>
+                                    <ion-img [routerLink]="['/']" src="assets/star.png"></ion-img>
+                                    Entfernen
+                                </p>
                             </div>
                         </div>
 

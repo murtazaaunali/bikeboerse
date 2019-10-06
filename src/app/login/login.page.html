@@ -1,10 +1,8 @@
 <main-header></main-header>
-
-
 <ion-content>
   <!-- Logo -->
   <div padding-horizontal text-center class="animated fadeInDown main-login-bg">
-      <div class="backicon"><img src="../assets/backicon-white.png"></div>
+    <div class="backicon"><img src="../assets/backicon-white.png"></div>
     <div class="mainDiv">
       <div class="image-circle-avatar"></div>
       <h2 ion-text class="white">
@@ -12,36 +10,24 @@
       </h2>
     </div>
   </div>
-
   <!-- Login form -->
   <form class="list-form">
-
-
-    <ion-input type="email" aria-placeholder="Email" placeholder="Email" class="input-login"></ion-input>
-
-
-    <ion-input type="password" aria-placeholder="Password" placeholder="Password"></ion-input>
-    <button ion-button icon-start block color="dark" class="button-login">
-
+    <ion-input type="email" aria-placeholder="Email" placeholder="Email" class="input-login" name="username" [(ngModel)]="username">
+    </ion-input>
+    <ion-input type="password" aria-placeholder="Password" placeholder="Password" name="password" [(ngModel)]="password"></ion-input>
+    <button ion-button icon-start block color="dark" class="button-login" (click)="login()" >
       LOGIN
     </button>
-
     <div class="hr"></div>
     <button ion-button icon-start block color="dark" class="button-login login-button-fb">
       <div class="fb-logo"><img src="../assets/fb-logo.png"></div>
       LOGIN MIT FACEBOOK
     </button>
-
     <div class="hr"></div>
-
     <button ion-button icon-start block color="dark" class="button-login">
-
       Neuen Account erstellen
     </button>
-
-
     <button ion-button icon-start block color="dark" class="button-login">
-
       Passwort vergessen
     </button>
   </form>

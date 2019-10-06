@@ -1,0 +1,66 @@
+.main-image ion-img {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.cam-icon {
+    width: 100px;
+    margin: 0 auto;
+}
+
+ion-img.cam-img {
+    width: 30px !important;
+    position: relative;
+    left: 8px;
+}
+
+.settings {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.settings ion-img {
+    max-width: 30px !important;
+}
+
+.backicon ion-img {
+    max-width: 18px !important;
+}
+
+.text-register {
+    color: #222222;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.backicon {
+    float: left;
+    width: 12px;
+}
+
+.register-account {
+    position: relative;
+}
+
+ion-img.cam-img {
+    width: 30px !important;
+    position: relative;
+    left: 68px;
+    top: 55px;
+}
+
+.settings {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.settings ion-img {
+    max-width: 30px !important;
+}
+
+.backicon ion-img {
+    max-width: 18px !important;
+}

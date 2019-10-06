@@ -1,26 +1,43 @@
-
-.text-register{    color: #222222;
+.text-register {
+  color: #222222;
   font-size: 18px;
   font-weight: normal;
-  text-align: center;}
+  text-align: center;
+}
+
 .backicon {
   float: left;
   width: 12px;
 }
-.register-account{position: relative;}
+
+.register-account {
+  position: relative;
+}
+
 .main-image img {
   width: 100px;
 }
+
 img.cam-img {
   width: 30px !important;
   position: relative;
   left: 8px;
 }
-.settings{position: absolute;    right: 0px;
+
+.settings {
+  position: absolute;
+  right: 0px;
   top: 0px;
 }
-.settings img{max-width:30px !important;}
-.backicon img{max-width:18px !important;}
+
+.settings img {
+  max-width: 30px !important;
+}
+
+.backicon img {
+  max-width: 18px !important;
+}
+
 button.myAccountbtn {
   border: 1px solid #c3c3c3;
   background: #fff;
@@ -42,6 +59,7 @@ button.myAccountbtn {
 
 
 }
+
 button.footer {
   padding: 0px;
   width: 100%;
@@ -50,12 +68,21 @@ button.footer {
 
 
 }
-.w20 img{width:20px;    margin-bottom: 10px;}
-.label-footer{font-size:12px;}
+
+.w20 img {
+  width: 20px;
+  margin-bottom: 10px;
+}
+
+.label-footer {
+  font-size: 12px;
+}
+
 footer {
   border-top: 2px solid #fcfcfc;
   padding-top: 5px !important;
 }
+
 p.text-tc {
   background: white;
   border: 1px solid #cacaca;
@@ -65,32 +92,42 @@ p.text-tc {
   font-size: 12px;
   border-radius: 3px;
 }
+
 span.strong-txt {
   font-weight: bold;
 }
+
 .hr-myAccount {
   margin: 20px auto;
   width: 60%;
   height: 1px;
   background: #c3c3c3;
 }
+
 .animated.fadeInDown.register-account {
   padding: 0px;
 }
+
 ion-segment-button.md.segment-button-has-label.segment-button-has-label-only.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant.hydrated {
   font-size: 12px;
 }
-.padding-0 button.button-native{padding:0px !important}
+
+.padding-0 button.button-native {
+  padding: 0px !important
+}
+
 ion-ripple-effect.md.hydrated {
   border: 1px solid #cacaca;
   padding: 0px;
   margin: 0px;
   border-radius: 10px;
 }
+
 :host(.segment-button-checked) {
   border-color: none !important;
-  border:none !important;
+  border: none !important;
 }
+
 ion-segment-button {
   height: 34px;
   min-height: 30px;
@@ -105,10 +142,11 @@ ion-segment-button {
   border-radius: 4px;
 
 }
-.item-inner{
+
+.item-inner {
   background: #000;
   --inner-padding-end: 0px;
-  --padding-start:0px
+  --padding-start: 0px
 }
 
 .product-list {
@@ -118,9 +156,9 @@ ion-segment-button {
   border-radius: 3px;
   background-color: #fff;
 
-  a
-  {
+  a {
     text-decoration: none;
+
     .product-title-list {
       margin-top: 0px;
       font-size: 14px;
@@ -130,6 +168,7 @@ ion-segment-button {
 
 
   }
+
   .price-prod-list {
     color: #62c2e4;
     margin-bottom: 0px;
@@ -138,28 +177,34 @@ ion-segment-button {
   .product-icon-image {
     height: 22px;
   }
+
   .border-bottom {
     border-bottom: 1px solid #d4d4d4;
     height: 2px;
   }
+
   .bottom-icon-list {
     border-right: 1px solid #d4d4d4;
   }
+
   .last-orange {
     color: #f7790d;
     font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 0px;
     margin-top: 3px;
+
     img {
       width: 12px;
       margin-right: 2px;
     }
   }
 }
+
 ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
   margin-bottom: 18px;
 }
+
 ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button-has-label-only.segment-button-checked.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant {
   background: #62c2e4;
   color: #fff;

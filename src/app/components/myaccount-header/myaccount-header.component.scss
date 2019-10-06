@@ -1,0 +1,43 @@
+ion-segment-button.md.segment-button-has-label.segment-button-has-label-only.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant.hydrated {
+    font-size: 12px;
+}
+
+.padding-0 button.button-native {
+    padding: 0px !important
+}
+
+ion-ripple-effect.md.hydrated {
+    border: 1px solid #cacaca;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+:host(.segment-button-checked) {
+    border-color: none !important;
+    border: none !important;
+}
+
+ion-segment-button {
+    height: 34px;
+    min-height: 30px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    width: 50px !important;
+    min-width: 10px !important;
+    border: 1px solid #cacaca;
+    margin: 2px;
+    padding: 2px;
+    font-size: 12px !important;
+    border-radius: 4px;
+    background: #fff;
+    color: #000000;
+}
+
+.active-link1,
+.active-link2,
+.active-link3,
+.active-link4 {
+    background: #62c2e4;
+    color: #fff;
+}

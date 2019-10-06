@@ -7,20 +7,22 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 
 import { ComponentsModule } from './../components/components.module';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ComponentsModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
-  ],
-  declarations: [HomePage]
+    imports: [
+        SharedModule,
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ComponentsModule,
+        RouterModule.forChild([
+            {
+                path: '',
+                component: HomePage
+            }
+        ])
+    ],
+    declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }

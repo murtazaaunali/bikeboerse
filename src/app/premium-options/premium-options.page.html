@@ -1,42 +1,32 @@
 <main-header></main-header>
-
 <ion-content>
-    <div class="ion-padding">
-  <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
-  <h2 class="main-title text-center"><img src="assets/bedge.png"> Premium Option </h2>
-  <p class="paragraph-description text-center">Erhalte mehr Sichtbarkeit und Aufmerksamkeit für deine Produkte mit Hilfe von Premiumoptionen!</p>
-
-      <div class="main-list">
-        <div class="list-detail">
-<h6 class="list-left">Einmaliges hoch pushen</h6>
- <p class="checklist-desc">Dein Artikel wird ganz nach oben geschoben und landet  wieder auf der ersten Seite der Kategorie.</p>
-      </div>
-      </div>
-  <div class="main-list">
-    <div class="list-detail">
-      <h6 class="list-left">Einmaliges hoch pushen</h6>
-      <p class="checklist-desc">Dein Artikel wird ganz nach oben geschoben und landet  wieder auf der ersten Seite der Kategorie.</p>
+  <div class="ion-padding">
+    <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    <h2 class="main-title text-center"><img src="assets/bedge.png"> Premium Option </h2>
+    <p class="paragraph-description text-center">Erhalte mehr Sichtbarkeit und Aufmerksamkeit für deine Produkte mit
+      Hilfe von Premiumoptionen!</p>
+    <div class="checkbox-premium-option">
+      <ion-list>
+        <ion-item *ngFor="let option of options">
+          <ion-checkbox slot="start" value="one" color="secondary"></ion-checkbox>
+          <ion-label class="main-label-check"><b>{{ option.title }}</b>
+            <p class="check-desc">{{ option.desc }}</p>
+            <div class="right-check">
+              <p>{{ option.price }} €</p>
+              <img src="assets/exclaimation-mark.png" />
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="total-check">
+      <p class="total-desc">Preis inkl. Umsatzsteuer</p>
+      <p class="totla-check-number">Summe: 4,99 €</p>
+    </div>
+    <div class="button-total-check">
+      <ion-button class="check-final-btn" shape="round" color="secondary">Kaufen und mit Paypal zahlen
+      </ion-button>
     </div>
   </div>
-  <div class="main-list">
-    <div class="list-detail">
-      <h6 class="list-left">Einmaliges hoch pushen</h6>
-      <p class="checklist-desc">Dein Artikel wird ganz nach oben geschoben und landet  wieder auf der ersten Seite der Kategorie.</p>
-    </div>
-  </div>
-  <div class="main-list">
-    <div class="list-detail">
-      <h6 class="list-left">Einmaliges hoch pushen</h6>
-      <p class="checklist-desc">Dein Artikel wird ganz nach oben geschoben und landet  wieder auf der ersten Seite der Kategorie.</p>
-    </div>
-  </div>
-  <div class="main-list">
-    <div class="list-detail">
-      <h6 class="list-left">Einmaliges hoch pushen</h6>
-      <p class="checklist-desc">Dein Artikel wird ganz nach oben geschoben und landet  wieder auf der ersten Seite der Kategorie.</p>
-    </div>
-  </div>
-    </div>
-
 </ion-content>
 <main-footer></main-footer>

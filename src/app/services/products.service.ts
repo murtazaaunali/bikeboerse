@@ -25,7 +25,7 @@ export class ProductsService {
                 catchError(this.handleError('getProducts', []))
             );
     }
-    
+
     public searchProducts(keyword: string): Observable<any> {
         return this.httpClient.get(this.baseUrl + '/product/SearchByProduct.php?title=' + keyword)
             .pipe(
@@ -36,6 +36,14 @@ export class ProductsService {
 
     public getProductsByCategory(categoryId: number): Observable<any> {
         return this.httpClient.get(this.baseUrl + '/product/readproductbycatId.php?id=' + categoryId)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('getProducts', []))
+            );
+    }
+    
+    public getProductsByUser(userId: number): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/product/readbyuser.php?userid' + userId)
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getProducts', []))
