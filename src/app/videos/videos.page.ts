@@ -54,6 +54,7 @@ export class VideosPage implements OnInit {
                     for (let i = 0; i < 10; i++) {
                         this.data.push(videos['records'][i]);
                     }
+                    
                 },
                 error => this.errorMessage = <any> error);
     }
