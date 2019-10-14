@@ -5,6 +5,7 @@ import { ProductModel } from '../models/product-model';
 import { Category } from '../models/category';
 import { Video } from '../models/video';
 import { VideosService } from './../services/videos.service';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
     selector: 'app-home',
@@ -28,14 +29,14 @@ export class HomePage {
 
     videos: Video[];
 
-    constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private videosService: VideosService) {
-        
+    constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private videosService: VideosService, public youtube: YoutubeVideoPlayer) {
+
         // Get products for Slider 
         this.productsService.getProducts('0,10', 'online_from').subscribe(products => {
             this.productsSlides = products.records;
             console.log(this.productsSlides);
         });
-        
+
         // Get latest products 
         this.productsService.getProducts('0,10', 'user').subscribe(products => {
             this.productsLatests = products.records;
@@ -47,10 +48,18 @@ export class HomePage {
             console.log(this.categories);
         });
 
-        this.videosService.getVideos().subscribe(videos => {
+        this.videosService.getLatestVideos().subscribe(videos => {
             this.videos = videos['records'];
             console.log(this.videos);
         });
+    }
+
+    openVideo(video_id) {
+        this.youtube.openVideo(video_id);
+    }
+
+    missingImage(missingImgUrl) {
+        console.log(missingImgUrl)
     }
 
 }

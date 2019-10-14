@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthenticationService } from './../services/authentication.service';
 
 @Component({
@@ -14,6 +15,10 @@ export class LoginPage implements OnInit {
 
     login() {
         this.authenticationService.login(this.username, this.password);
+    }
+
+    loginWithFB() {
+        this.authenticationService.loginWithFB();
     }
     ngOnInit() {
     }

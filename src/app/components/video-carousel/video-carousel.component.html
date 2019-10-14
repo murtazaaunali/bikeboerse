@@ -1,0 +1,8 @@
+<div class="slider-3">
+  <h5 class="product-heading"> {{ _heading }}<span></span></h5>
+  <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts3">
+    <ion-slide *ngFor="let video of _videos">
+      <ion-img cache="true" (click)="openVideo(video.id)" [src]="video.video_thumb"></ion-img>
+    </ion-slide>
+  </ion-slides>
+</div>

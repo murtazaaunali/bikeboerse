@@ -6,9 +6,9 @@
 	<myaccount-header></myaccount-header>
 	<!-- /Header -->
 	<button class="myAccountbtn">Rechnungen</button>
-	<button class="myAccountbtn">Nickname ändern</button>
-	<button class="myAccountbtn">Passwort ändern</button>
-	<button class="myAccountbtn">Logout</button>
+	<button class="myAccountbtn" (click)="updateProfile()">Nickname ändern</button>
+	<button class="myAccountbtn" (click)="changePassword()">Passwort ändern</button>
+	<button class="myAccountbtn" (click)="logout()">Logout</button>
 	<div class="hr-myAccount"></div>
 
 	<p class="text-tc">

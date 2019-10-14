@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
     selector: 'app-video',
@@ -6,18 +8,16 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./video.page.scss'],
 })
 export class VideoPage implements OnInit {
-    public splitPaneState: boolean = false;
-    constructor() { }
-    openMenu() {
-        if (this.splitPaneState == false) {
-            this.splitPaneState = true;
-        } else {
-            this.splitPaneState = false;
-        }
-        console.log(this.splitPaneState);
-    }
+    video_id: string;
+    constructor(private route: ActivatedRoute, private youtube: YoutubeVideoPlayer) {
+        this.video_id = this.route.snapshot.paramMap.get('id');
+        console.log("Video ID: " + this.video_id)
 
+    }
     ngOnInit() {
+        if (this.video_id) {
+            this.youtube.openVideo(this.video_id);
+        }
     }
 
 }

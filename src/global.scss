@@ -39,3 +39,17 @@ ion-ripple-effect.md.hydrated {
 ion-content {
     --ion-background-color: #f3f3f3;
 }
+
+.backicon {
+    display: block;
+}
+
+.backicon img {
+    max-width: 18px !important;
+    display: block;
+}
+
+ion-img :focus,
+ion-thumbnail :focus {
+    outline: none;
+}

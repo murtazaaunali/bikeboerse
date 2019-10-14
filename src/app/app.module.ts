@@ -18,10 +18,22 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/File/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
+
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        HttpClientModule, 
+        IonicStorageModule.forRoot()
+    ],
     providers: [
         StatusBar,
         SplashScreen,
@@ -29,6 +41,10 @@ import { FilePath } from '@ionic-native/file-path/ngx';
         Camera,
         File,
         FilePath,
+        YoutubeVideoPlayer,
+        InAppBrowser,
+        WebView,
+        Facebook,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
     ],
     bootstrap: [AppComponent]

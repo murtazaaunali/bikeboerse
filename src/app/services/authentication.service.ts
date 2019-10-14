@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { ToastController, Platform } from '@ionic/angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 import { tap, catchError } from 'rxjs/operators';
 
@@ -20,7 +21,8 @@ export class AuthenticationService {
         private storage: Storage,
         private platform: Platform,
         private httpClient: HttpClient,
-        public toastController: ToastController) {
+        public toastController: ToastController,
+        private fb: Facebook) {
         this.platform.ready().then(() => {
             this.ifLoggedIn();
         });
@@ -50,9 +52,27 @@ export class AuthenticationService {
 
     }
 
+    loginWithFB() {
+        this.fb.getLoginStatus().then((res) => {
+            console.log(res);
+            if (res.status === 'connected') {
+                console.log(res);
+            } else {
+                this.fb.login(['public_profile', 'user_profile', 'email'])
+                    .then((res: FacebookLoginResponse) => {
+                        console.log('Logged into Facebook!', res);
+                    })
+                    .catch(e => {
+                        console.log('Error logging into Facebook', e);
+                    });
+                this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
+            }
+        });
+    }
+
     logout() {
         this.storage.remove('USER_INFO').then(() => {
-            this.router.navigate(['login']);
+            this.router.navigate(['home']);
             this.authState.next(false);
         });
     }

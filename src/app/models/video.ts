@@ -4,6 +4,7 @@ export class Video {
     title: string;
     user: string;
     video: string;
+    video_thumb: string;
 
     constructor(values: Object = {}) {
 

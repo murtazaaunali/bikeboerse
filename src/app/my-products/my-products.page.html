@@ -3,59 +3,69 @@
     <div class="ion-padding">
         <account-userinfo></account-userinfo>
         <myaccount-header></myaccount-header>
-        <div class="product-list" *ngFor="let product of products">
-            <ion-grid>
-                <ion-row>
-                    <ion-col size="6">
-                        <ion-img [routerLink]="'/product/' + product.id" [src]="product.filename"
-                            class="product-list-image"></ion-img>
-                    </ion-col>
-                    <ion-col size="6">
-                        <div class="list-detail">
-                            <a [routerLink]="'/product/' + product.id">
-                                <h4 class="product-title-list">{{product.title}} </h4>
-                            </a>
-                            <p class="price-prod-list">{{product.price}} € - VB</p>
-                            <p class="size-prod-list">Größe <span>{{product.size}}</span></p>
-                        </div>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-            <div class="border-bottom"></div>
-            <ion-grid>
-                <ion-row>
-                    <ion-col size="6">
-                        <div class="bottom-icon-list">
+        <div *ngIf="products">
+            <div class="product-list" *ngFor="let product of products">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6">
+                            <ion-img [routerLink]="'/product/' + product.id" [src]="product.filename"
+                                class="product-list-image"></ion-img>
+                        </ion-col>
+                        <ion-col size="6">
+                            <div class="list-detail">
+                                <a [routerLink]="'/product/' + product.id">
+                                    <h4 class="product-title-list">{{product.title}} </h4>
+                                </a>
+                                <p class="price-prod-list">{{product.price}} € - VB</p>
+                                <p class="size-prod-list">Größe <span>{{product.size}}</span></p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <div class="border-bottom"></div>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6">
+                            <div class="bottom-icon-list">
+                                <ion-row>
+                                    <ion-col size="3">
+                                        <ion-img [routerLink]="'/edit-product/' + product.id" src="assets/icon-edit.png"
+                                            class="product-icon-image">
+                                        </ion-img>
+                                    </ion-col>
+                                    <ion-col size="3">
+                                        <ion-img [routerLink]="['/']" src="assets/icon-stop.png"
+                                            class="product-icon-image">
+                                        </ion-img>
+                                    </ion-col>
+                                    <ion-col size="3">
+                                        <ion-img [routerLink]="['/']" src="assets/icon-upload.png"
+                                            class="product-icon-image"></ion-img>
+                                    </ion-col>
+                                    <ion-col size="3">
+                                        <ion-img [routerLink]="['/']" src="assets/icon-delete.png"
+                                            class="product-icon-image"></ion-img>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-col>
+                        <ion-col size="6">
                             <ion-row>
-                                <ion-col size="3">
-                                    <ion-img [routerLink]="'/edit-product/' + product.id" src="assets/icon-edit.png"
-                                        class="product-icon-image">
-                                    </ion-img>
-                                </ion-col>
-                                <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-stop.png" class="product-icon-image">
-                                    </ion-img>
-                                </ion-col>
-                                <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-upload.png"
-                                        class="product-icon-image"></ion-img>
-                                </ion-col>
-                                <ion-col size="3">
-                                    <ion-img [routerLink]="['/']" src="assets/icon-delete.png"
-                                        class="product-icon-image"></ion-img>
+                                <ion-col size="12">
+                                    <p class="last-orange text-center"><img src="assets/bedge.png">JETZT HERORHEBEN</p>
                                 </ion-col>
                             </ion-row>
-                        </div>
-                    </ion-col>
-                    <ion-col size="6">
-                        <ion-row>
-                            <ion-col size="12">
-                                <p class="last-orange text-center"><img src="assets/bedge.png">JETZT HERORHEBEN</p>
-                            </ion-col>
-                        </ion-row>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <div [hidden]="products">
+            <ion-card>
+                <ion-card-content>
+                    No products found.
+                </ion-card-content>
+            </ion-card>
         </div>
     </div>
 </ion-content>

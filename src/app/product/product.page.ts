@@ -11,16 +11,16 @@ import { ProductModel } from '../models/product-model';
 })
 export class ProductPage implements OnInit {
     id: number;
-    product: ProductModel[];
+    productModel: ProductModel[];
     constructor(private route: ActivatedRoute, private productService: ProductsService) {
         this.id = parseInt(this.route.snapshot.paramMap.get('id'));
         console.log('product id:' + this.id);
-        ;
 
         this.productService.getProduct(this.id).subscribe(products => {
-            this.product = products.records;
-            console.log(this.product);
+            this.productModel = products.records;
+            console.log(this.productModel);
         });
     }
+
     ngOnInit() { }
 }

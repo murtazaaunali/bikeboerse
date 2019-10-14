@@ -1,141 +1,36 @@
 <main-header></main-header>
-
 <ion-content padding>
   <!-- Logo -->
-  <div padding-horizontal text-center class="animated fadeInDown register-account">
-  
-    <div class="backicon"><img src="../assets/backicon.png"></div>
-     <h2 ion-text class="text-primary text-register">
-    Inserieren 2/2
-     </h2>
-   
-   </div>
-  
-   <!-- Login form -->
-   <form class="list-form">
-    
-      
-       <ion-input type="text"  placeholder="Titel" class="input-login"></ion-input>
-      
-       
-        <ion-textarea class="comments" placeholder="Beschreibung"></ion-textarea>
-        <ion-grid>
-         
-              <ion-row>
-                  <ion-col size= "6">
-                     <p size class="mb0 blue"><span class="bold-grey blue">Preis</span><span class="amount blue"> 
-                      <ion-input type="text"  placeholder="12345,95" class="input-amount"></ion-input></span><span class="pull-left grey">€</span></p>
-                  </ion-col>
-                  <ion-col size= "6">
-                      <select name="carlist" form="carform" class="festpreis">
-                          <option value="volvo">Festpreis</option>
-                          <option value="saab">Festpreis</option>
-                          <option value="opel">Festpreis</option>
-                          <option value="audi">Festpreis</option>
-                        </select>
-                    
-                   </ion-col>
-              
-
-              </ion-row>
-              <ion-row>
-                  <ion-col size= "6">
-                     
-
-                        <ion-label>Pay Pal:</ion-label>
-                        <ion-toggle color="secondary" name="paypal" checked></ion-toggle>
-                     
-                  </ion-col>
-                  <ion-col size= "6">
-                     
-
-                      <ion-label>Abholung:</ion-label>
-                        <ion-toggle color="secondary"  name="abholung" ></ion-toggle>
-                     
-                   </ion-col>
-                  
-              <div class="hr"></div>
-
-              </ion-row>
-
-      </ion-grid>
-
-      <p class="text-side">Wichtige Details </p>
-      <ion-input type="text"  placeholder="Hersteller" class="input-login"></ion-input>
-      
-      <ion-input type="text"  placeholder="Federweg Gabel" class="input-login"></ion-input>
-      
-      <div class="hr"></div>
-      <p class="text-side">Rahmengröße 
-        
-      </p>
-      <ion-segment>
-        <ion-segment-button checked class="padding-0" >
-          <ion-label class="padding-0">XS</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="padding-0">
-          <ion-label class="padding-0">S</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="padding-0">
-          <ion-label class="padding-0">L</ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="padding-0">
-          <ion-label class="padding-0">XL</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-       
-    <div class="main-cm">
-        <p size class="mb0 blue font-12"><span class="bold-grey blue">Andere Größe </span><span class="amount blue"> 
-         <ion-input type="text"  placeholder="55cm" class="input-amount w40"></ion-input></span><span class="pull-left grey"></span></p>
+  <div class="bg-color">
+    <div padding-horizontal text-center class="animated fadeInDown policies bg-color">
+      <ion-buttons slot="start">
+        <ion-back-button text="" class="backicon"></ion-back-button>
+      </ion-buttons>
+      <!-- <div class="backicon"><img src="../assets/backicon.png"></div> -->
+      <div class="mt2">
+        <div class="text-tc main-div-settings">
+          <ul class="main-nav-settings">
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/bell.png"></span><span
+                class="main-text">Benachrichtigungen</span></li>
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/file.png"></span><span
+                class="main-text">Datenschutz</span>
+            </li>
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/file.png"></span><span
+                class="main-text">Nutzungsbedingungen</span></li>
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/file.png"></span><span
+                class="main-text">Copyright</span></li>
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/acc_setting.png"></span><span
+                class="main-text">Hilfe</span>
+            </li>
+            <li (click)="openNotifications()"><span class="icon-1"><img src="../assets/bug.png"></span><span
+                class="main-text">Störung melden</span>
+            </li>
+          </ul>
         </div>
-     
-     <div class="hr"></div>
+        <p class="version">Version 1.0</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
 
-     <p class="text-side">Laufradgröße 
-        
-    </p>
-    <ion-segment>
-      <ion-segment-button checked class="padding-0" >
-        <ion-label class="padding-0">26“</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="padding-0">
-        <ion-label class="padding-0">27,5“</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="padding-0">
-        <ion-label class="padding-0">27,5+</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="padding-0">
-        <ion-label class="padding-0">28“</ion-label>
-      </ion-segment-button>
-      <ion-segment-button class="padding-0">
-        <ion-label class="padding-0">29“</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-<div class="maintext-wich">
-  <p class="text-side p0 m0">Video zu deinem Artikel hinzufügen </p>
-  <ion-input type="text"  placeholder="YouTube Link einfügen" class="input-login"></ion-input>
-
-</div>
-   
-
-<div class="cam-img">
-<div class="box col-sm-3">+7</div>
-<div class="box col-sm-3"></div>
-<div class="box col-sm-3"></div>
-<div class="box col-sm-3"></div>
-<div class="cam-img-blue">
-<img src="../assets/cam-image.png">
-
-</div>
-
-
-</div> <button ion-button icon-start block color="dark" class="button-login">
-    <img class="w15" src="../assets/right-arrow.png">
-       </button>
-      
-  
-  
-   </form>
-  </ion-content>
-  
-  <main-footer></main-footer>
+<main-footer></main-footer>

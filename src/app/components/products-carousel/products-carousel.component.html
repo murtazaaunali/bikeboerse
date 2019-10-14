@@ -1,0 +1,36 @@
+<div class="product-slider" *ngIf="_size == 1">
+  <h5 class="product-heading">{{ _heading }}</h5>
+  <ion-slides pager [pager]="false" [scrollbar]="true">
+    <ion-slide *ngFor="let product of _products">
+      <img [src]="product.filename" onerror="this.src='../assets/no-image.png'" (load)="loaded = true"
+        [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.filename"
+        [routerLink]="'/product/' + product.id" class="product-main-slider" />
+      <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+      <div class="bg-title">
+        <p class="product-slider-title">{{product.title}}</p>
+        <p class="slider-price">{{product.price}} €</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<div class="slider-2" *ngIf="_size == 2">
+  <h5 class="product-heading">{{ _heading }}<span></span></h5>
+  <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts2">
+    <ion-slide *ngFor="let product of _products">
+      <div class="cst-slider-wrap">
+        <a [routerLink]="'/product/' + product.id">
+          <img [src]="product.filename" onerror="this.src='../assets/no-image.png'" (load)="loaded = true"
+            [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.filename"
+            [routerLink]="'/product/' + product.id" class="product-main-slider" />
+          <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+          <div class="main-bottom-slider">
+            <p class="slider-price">{{ product.price }} €</p>
+            <p class="slider-size">{{product.size}}</p>
+            <p class="product-slider-title">{{ product.title }}</p>
+          </div>
+        </a>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>

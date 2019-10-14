@@ -1,0 +1,16 @@
+<div class="slider-1">
+  <h5 class="product-heading">{{ _heading }}<span></span></h5>
+  <ion-slides #categorySlider [pager]="false" [scrollbar]="true" [options]="slideOpts">
+    <ion-slide *ngFor="let category of _categories">
+      <div class="cst-slider-wrap">
+        <a [routerLink]="'/products/' + category.id">
+          <img #thisImage [src]="category.filename" onerror="this.src='../assets/no-image.png'" (load)="loaded = true"
+            [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="category.filename"
+            [routerLink]="'/products/' + category.id" />
+          <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+          <p class="cat-title">{{ category.title  }}</p>
+        </a>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>

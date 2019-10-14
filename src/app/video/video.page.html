@@ -1,188 +1,56 @@
-
 <main-header></main-header>
-
-<ion-content padding>
-    <ion-split-pane [when]="splitPaneState">
-        <ion-menu side="end" contentId="content">
-            <ion-content >
-                <div padding-horizontal text-center class="animated fadeInDown register-account">
-
-                <div class="backicon"><img src="../assets/backicon.png" (click)="openMenu()"></div>
-                <div class="clearfix"></div>
-                <p class="searchline">
-                    Füge einen YouTube-Link ein, um ein Video zu teilen.</p>
-                    <div class="searchlineinput">
-                        <div class="icon-correct"></div>
-                    <ion-input type="text" aria-placeholder="You Tube Link einfügen" placeholder="You Tube Link einfügen"class="search-bar-video"></ion-input>
-                </div>
-
-                <p class="searchline-smalltext">Der Missbrauch dieser Funktion kamn zur Sperrung denies Account</p>
-            </div>
-
-            <ion-list no-padding>
-              <ion-item no-padding tappable routerDirection="root" >
-                  <div class="row">
-
-                      <div class="col">
-
-                          <div class="tabs">
-                              <div class="tab">
-                                  <input type="radio" id="rd1" name="rd">
-                                  <label class="tab-label" for="rd1"><span class="heart-icon"><img src="../assets/heart-icon.png"></span><span class="menetext">Meine Watchlist</span></label>
-                                  <div class="tab-content">
-                                    <ion-item-sliding (ionSwipe)="delete(item)">
-                                      <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
-                                          <div class="main-list-message">
-
-
-                                          <ion-img [routerLink]="['/']" src="assets/img-01.png" class="message-profile"></ion-img>
-                                          <p class="message-list-name">Fabio Wibmer - Fabiolous Escape 2</p>
-
-                                          </div>
-                                      </ion-item>
-                                      <ion-item-options>
-                                          <button class="del-icon" ion-button expandable (click)="delete(item)">  <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img></button>
-                                      </ion-item-options>
-                                  </ion-item-sliding>
-
-                                  </div>
-                              </div>
-                              <div class="tab">
-                                  <input type="radio" id="rd2" name="rd">
-                                  <label class="tab-label" for="rd2"><span class="heart-icon"><img src="../assets/video-icon.png"></span>Geteilte Videos</label>
-                                  <div class="tab-content">
-                                      <ion-item-sliding (ionSwipe)="delete(item)">
-                                          <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
-                                              <div class="main-list-message">
-
-
-                                              <ion-img [routerLink]="['/']" src="assets/img-01.png" class="message-profile"></ion-img>
-                                              <p class="message-list-name">Fabio Wibmer - Fabiolous Escape 2</p>
-
-                                              </div>
-                                          </ion-item>
-                                          <ion-item-options>
-                                              <button class="del-icon" ion-button expandable (click)="delete(item)">  <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img></button>
-                                          </ion-item-options>
-                                      </ion-item-sliding>
-
-                                  </div>
-                              </div>
-
-                          </div>
-                      </div>
-                  </div>
-                  <div class="clearfix"></div>
-
-              </ion-item>
-
-            </ion-list>
-
-
-            </ion-content>
-
-        </ion-menu>
-        <ion-router-outlet id="content" main>
-
-        </ion-router-outlet>
-
-    </ion-split-pane>
-
-
-
-
-
-     <div class="mainVido">
-
-     <div class="cat-name">Video Timeline</div>
-<p class="cat-pt-name">Premium Video</p>
-<div class="menu-position">
-<div class="filter-button" (click)="openMenu()"  class="menu-nav">
-  <img src="../assets/menu-nav.png">
- <p class="menutxt">Menu</p>
-</div>
-</div>
-<div class="video-player">
-  <div class="play-icon"></div>
-  <div class="threedots"></div>
-  <div class="views">
-<div class="icon-view"></div>
-<div class="icon-view-text">1.234.563</div>
-  </div>
-  <video width="100%" height="240" controls="false" autoplay="autoplay">
-    <source src="../assets/movie.mp4" type="video/mp4">
-
-    Your browser does not support the video tag.
-  </video>
-</div>
-<div class="mainUserPlayer">
-    <div class="video-player-user"></div>
-    <p class="namevideoPlay">NOX Cycles präsentiert das Hybrid <br><span class="hd-playername"> Enduro 6.7 2018 — 90 Nm BROSE Power…</span> </p>
-
-</div>
-
-
-    </div>
+<ion-content>
+  <div padding-horizontal text-center class="animated fadeInDown register-account">
+    <div class="backicon"><img src="../assets/backicon.png"></div>
     <div class="clearfix"></div>
-
-    <div class="hr"></div>
-
-    <div class="mainVido">
-
-
-   <div class="video-player">
-     <div class="play-icon"></div>
-     <div class="threedots"></div>
-     <div class="views">
-   <div class="icon-view"></div>
-   <div class="icon-view-text">1.234.563</div>
-     </div>
-     <video width="100%" height="240" controls="false" autoplay="autoplay">
-       <source src="../assets/movie.mp4" type="video/mp4">
-
-       Your browser does not support the video tag.
-     </video>
-   </div>
-   <div class="mainUserPlayer">
-       <div class="video-player-user"></div>
-       <p class="namevideoPlay">NOX Cycles präsentiert das Hybrid <br><span class="hd-playername"> Enduro 6.7 2018 — 90 Nm BROSE Power…</span> </p>
-
-   </div>
-
-
-       </div>
-       <div class="clearfix"></div>
-
-
-       <div class="hr"></div>
-       <div class="mainVido">
-
-
-          <div class="video-player">
-            <div class="play-icon"></div>
-            <div class="threedots"></div>
-            <div class="views">
-          <div class="icon-view"></div>
-          <div class="icon-view-text">1.234.563</div>
-            </div>
-            <video width="100%" height="240" controls="false" autoplay="autoplay">
-              <source src="../assets/movie.mp4" type="video/mp4">
-
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="mainUserPlayer">
-              <div class="video-player-user"></div>
-              <p class="namevideoPlay">NOX Cycles präsentiert das Hybrid <br><span class="hd-playername"> Enduro 6.7 2018 — 90 Nm BROSE Power…</span> </p>
-
-          </div>
-
-
+    <p class="searchline">
+      Füge einen YouTube-Link ein, um ein Video zu teilen.</p>
+    <div class="searchlineinput">
+      <div class="icon-correct"></div>
+      <ion-input type="text" aria-placeholder="You Tube Link einfügen" placeholder="You Tube Link einfügen"
+        class="search-bar-video"></ion-input>
+    </div>
+    <p class="searchline-smalltext">Der Missbrauch dieser Funktion kamn zur Sperrung denies Account</p>
+  </div>
+  <ion-list no-padding>
+    <ion-item no-padding tappable routerDirection="root">
+      <div class="row">
+        <div class="col">
+          <div class="tabs">
+            <div class="tab">
+              <input type="radio" id="rd1" name="rd">
+              <label class="tab-label" for="rd1"><span class="heart-icon"><img
+                    src="../assets/heart-icon.png"></span><span class="menetext">Meine
+                  Watchlist</span></label>
+              <div class="tab-content">
+                <ion-item-sliding (ionSwipe)="delete(item)">
+                  <ion-item no-padding class="main-message-list" style="background-color: #0d47a1 !important">
+                    <div class="main-list-message">
+                      <ion-img [routerLink]="['/']" src="assets/img-01.png" class="message-profile"></ion-img>
+                      <p class="message-list-name">Fabio Wibmer - Fabiolous Escape 2</p>
+                    </div>
+                  </ion-item>
+                  <ion-item-options>
+                    <button class="del-icon" ion-button expandable (click)="delete(item)">
+                      <ion-img [routerLink]="['/']" src="assets/icon-delete-white.png" class="del-img"></ion-img>
+                    </button>
+                  </ion-item-options>
+                </ion-item-sliding>
               </div>
-       <div class="clearfix"></div>
-              <div class="google-add">
-                  <ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img>
-                </div>
+            </div>
+            <div class="tab">
+              <input type="radio" id="rd2" name="rd">
+              <label class="tab-label" for="rd2"><span class="heart-icon"><img
+                    src="../assets/video-icon.png"></span>Geteilte Videos</label>
+              <div class="tab-content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </ion-item>
+  </ion-list>
 </ion-content>
 <main-footer></main-footer>
-

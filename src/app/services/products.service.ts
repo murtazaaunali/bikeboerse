@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ProductModel } from './../models/product-model';
-import { Observable, throwError, of } from "rxjs";
-import { map, catchError, tap } from "rxjs/operators";
+import { Observable, of } from "rxjs";
+import { catchError, tap } from "rxjs/operators";
 
 @Injectable()
 export class ProductsService {
@@ -41,9 +41,17 @@ export class ProductsService {
                 catchError(this.handleError('getProducts', []))
             );
     }
-    
+
     public getProductsByUser(userId: number): Observable<any> {
-        return this.httpClient.get(this.baseUrl + '/product/readbyuser.php?userid' + userId)
+        return this.httpClient.get(this.baseUrl + '/product/readbyuser.php?userid=' + userId)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('getProducts', []))
+            );
+    }
+
+    public getProductsByUserWatchlist(userId: number): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/product/getwatchlistbyuserid.php?userid=' + userId)
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getProducts', []))

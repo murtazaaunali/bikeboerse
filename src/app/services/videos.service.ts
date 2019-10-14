@@ -9,13 +9,24 @@ import { map, catchError, tap } from "rxjs/operators";
 })
 export class VideosService {
     baseUrl: string = "https://bikeboerse.com/BikeApi/ios";
+    videos_url: string;
     constructor(private httpClient: HttpClient) { }
 
     public getVideos() {
-        return this.httpClient.get(this.baseUrl + '/product/getallvideos.php?limit=0,10&orderby=title')
+        this.videos_url = this.baseUrl + '/product/getallvideos.php?orderby=title';
+        return this.httpClient.get(this.videos_url)
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getVideos', []))
+            );
+    }
+
+    public getLatestVideos() {
+        this.videos_url = this.baseUrl + '/product/getallvideos.php?limit=0,10&orderby=title';
+        return this.httpClient.get(this.videos_url)
+            .pipe(
+                tap(_ => this.log('response received')),
+                catchError(this.handleError('getLatestVideos', []))
             );
     }
 
