@@ -10,9 +10,14 @@ export class ProductsCarouselComponent implements OnInit {
     _products: any;
     _size: number;
     _heading: string;
+    loaded: any;
 
     slideOpts: any = {
         slidesPerView: 3
+    };
+    slideOpts1: any = {
+        slidesPerView: 1,
+        autoplay: true
     };
     slideOpts2: any = {
         slidesPerView: 2

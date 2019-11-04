@@ -1,16 +1,12 @@
 <div padding-horizontal text-center class="animated fadeInDown register-account">
-  <div class="backicon">
-    <ion-buttons slot="start">
-      <ion-back-button text="" class="backicon"></ion-back-button>
-    </ion-buttons>
-  </div>
   <div class="">
     <div class="main-image">
       <span class="cam-image">
         <ion-img class="cam-img" (click)="selectImage()" src="../assets/cam-icon.png"></ion-img>
       </span>
-      <ion-img src="../assets/avatar-image.png"></ion-img>
-
+      <ion-avatar class="ion-margin-start">
+        <img [src]="picture">
+      </ion-avatar>
     </div>
     <h2 ion-text class="text-primary text-register">
       {{ username }}

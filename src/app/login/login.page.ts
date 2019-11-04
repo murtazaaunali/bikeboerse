@@ -11,7 +11,8 @@ export class LoginPage implements OnInit {
     username: any;
     password: any;
 
-    constructor(private authenticationService: AuthenticationService) { }
+    constructor(private authenticationService: AuthenticationService) {
+    }
 
     login() {
         this.authenticationService.login(this.username, this.password);
@@ -21,6 +22,7 @@ export class LoginPage implements OnInit {
         this.authenticationService.loginWithFB();
     }
     ngOnInit() {
+        this.authenticationService.ifLoggedIn();
     }
 
 }

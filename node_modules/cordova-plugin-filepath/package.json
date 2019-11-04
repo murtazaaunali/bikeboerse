@@ -1,27 +1,26 @@
 {
-  "_from": "cordova-plugin-filepath",
+  "_from": "cordova-plugin-filepath@^1.5.6",
   "_id": "cordova-plugin-filepath@1.5.6",
   "_inBundle": false,
   "_integrity": "sha512-YvrnXfoq4hzruVXnKo2qAiWlJ6xqo9RWLycEOI13WAIb69pzVvvFHXLREv7otSXkTn2tugpHQWcopxnPPOvFtA==",
   "_location": "/cordova-plugin-filepath",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-filepath",
+    "raw": "cordova-plugin-filepath@^1.5.6",
     "name": "cordova-plugin-filepath",
     "escapedName": "cordova-plugin-filepath",
-    "rawSpec": "",
+    "rawSpec": "^1.5.6",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^1.5.6"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-filepath/-/cordova-plugin-filepath-1.5.6.tgz",
   "_shasum": "e452b9892e30746e01884a64f521e0d543bdb028",
-  "_spec": "cordova-plugin-filepath",
+  "_spec": "cordova-plugin-filepath@^1.5.6",
   "_where": "/Users/murtaza/Desktop/Data/IonicApps/MoutainBikeApp/BikeBoerse/BikeBoerse",
   "author": {
     "name": "Ramesh Nair",

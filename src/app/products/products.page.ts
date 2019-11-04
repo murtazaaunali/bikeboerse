@@ -16,6 +16,9 @@ export class ProductsPage implements OnInit {
     categories: any;
     category: any;
 
+    euro: any;
+    km: any;
+
     constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private route: ActivatedRoute) {
         this.categoryId = parseInt(this.route.snapshot.paramMap.get('categoryid'));
 
@@ -28,6 +31,10 @@ export class ProductsPage implements OnInit {
 
     addToWishlist() {
         console.log("Hello!");
+    }
+
+    onAgeChange() {
+
     }
 
     openFilter() {

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main-header></main-header>\n<ion-content>\n\t<div class=\"ion-padding\">\n\t\t<div class=\"product-slider\">\n\t\t\t<h5 class=\"product-heading\">Premiumanzeigen</h5>\n\t\t\t<ion-slides *ngIf=\"productsSlides\" pager [pager]=\"false\" [scrollbar]=\"true\" [mode]=\"ios\">\n\t\t\t\t<ion-slide *ngFor=\"let product of productsSlides\">\n\t\t\t\t\t<ion-img [hidden]=\"product.filename\" cache=\"true\" [routerLink]=\"'/product/' + product.id\"\n\t\t\t\t\t\tsrc=\"../assets/no-image.png\" class=\"product-main-slider\"></ion-img>\n\t\t\t\t\t<ion-img *ngIf=\"product.filename\" cache=\"true\" [routerLink]=\"'/product/' + product.id\"\n\t\t\t\t\t\t[src]=\"product.filename\" class=\"product-main-slider\"></ion-img>\n\t\t\t\t\t<div class=\"bg-title\">\n\t\t\t\t\t\t<p class=\"product-slider-title\">{{product.title}}</p>\n\t\t\t\t\t\t<p class=\"slider-price\">{{product.price}} €</p>\n\t\t\t\t\t</div>\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</div>\n\n\t\t<div class=\"slider-1\">\n\t\t\t<h5 class=\"product-heading\">Kategorein<span></span></h5>\n\t\t\t<ion-slides #categorySlider [pager]=\"false\" [scrollbar]=\"true\" [options]=\"slideOpts\" [mode]=\"ios\">\n\t\t\t\t<ion-slide *ngFor=\"let category of categories\">\n\t\t\t\t\t<div class=\"cst-slider-wrap\">\n\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t<ion-img [hidden]=\"category.filename\" cache=\"true\" [routerLink]=\"'/products/' + category.id\"\n\t\t\t\t\t\t\t\tsrc=\"../assets/no-image.png\" class=\"product-main-slider\"></ion-img>\n\t\t\t\t\t\t\t<ion-img *ngIf=\"category.filename\" cache=\"true\" [routerLink]=\"'/products/' + category.id\"\n\t\t\t\t\t\t\t\t[src]=\"category.filename\" class=\"product-main-slider\">\n\t\t\t\t\t\t\t</ion-img>\n\t\t\t\t\t\t\t<p class=\"cat-title\">{{ category.title  }}</p>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</div>\n\t\t<div class=\"google-add\">\n\t\t\t<ion-img cache=\"true\" [routerLink]=\"['/']\" src=\"assets/google-add.png\" class=\"add-img\"></ion-img>\n\t\t</div>\n\t\t<div class=\"slider-2\">\n\t\t\t<h5 class=\"product-heading\">Neuste Artikel<span></span></h5>\n\t\t\t<ion-slides *ngIf=\"productsLatests\" #categorySlider [pager]=\"false\" [scrollbar]=\"true\"\n\t\t\t\t[options]=\"slideOpts2\" [mode]=\"ios\">\n\t\t\t\t<ion-slide *ngFor=\"let product of productsLatests\">\n\t\t\t\t\t<div class=\"cst-slider-wrap\">\n\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t<ion-img cache=\"true\" [routerLink]=\"'/product/' + product.id\" [src]=\"product.filename\"\n\t\t\t\t\t\t\t\tclass=\"product-main-slider\">\n\t\t\t\t\t\t\t</ion-img>\n\t\t\t\t\t\t\t<div class=\"main-bottom-slider\">\n\t\t\t\t\t\t\t\t<p class=\"slider-price\">{{ product.price }} €</p>\n\t\t\t\t\t\t\t\t<p class=\"slider-size\">{{product.size}}</p>\n\t\t\t\t\t\t\t\t<p class=\"product-slider-title\">{{ product.title }}</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</div>\n\t\t<div class=\"slider-3\">\n\t\t\t<h5 class=\"product-heading\">Neuste User videos<span></span></h5>\n\t\t\t<ion-slides #categorySlider [pager]=\"false\" [scrollbar]=\"true\" [options]=\"slideOpts3\" [mode]=\"ios\">\n\t\t\t\t<ion-slide *ngFor=\"let video of videos\">\n\t\t\t\t\t<ion-img cache=\"true\" [routerLink]=\"'/video/' + video.id\" [src]=\"video.video_thumb\"></ion-img>\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</div>\n\n\t</div>\n</ion-content>\n<main-footer></main-footer>"
+module.exports = "<main-header [showBack]=false></main-header>\n<ion-content>\n\t<div class=\"ion-padding\">\n\t\t<!-- Product Carousel for Premiumanzeigen  -->\n\t\t<products-carousel [products]=\"productsSlides\" [size]=\"1\" heading=\"Premiumanzeigen\"></products-carousel>\n\n\t\t<!-- Categories Carousel for Kategorein  -->\n\t\t<categories-carousel [categories]=\"categories\" heading=\"Kategorein\"></categories-carousel>\n\n\t\t<!-- Google Ads Component  -->\n\t\t<google-ads></google-ads>\n\n\t\t<!-- Products Carousel for Neuste Artikel  -->\n\t\t<products-carousel [products]=\"productsLatests\" [size]=\"2\" heading=\"Neuste Artikel\"></products-carousel>\n\n\t\t<!-- Videos Carousel for Neuste User videos  -->\n\t\t<video-carousel [videos]=\"videos\" heading=\"Neuste User videos\"></video-carousel>\n\t</div>\n</ion-content>\n<main-footer></main-footer>"
 
 /***/ }),
 
@@ -123,10 +123,13 @@ let HomePage = class HomePage {
             this.categories = categories['records'];
             console.log(this.categories);
         });
-        this.videosService.getVideos(10).subscribe(videos => {
+        this.videosService.getLatestVideos().subscribe(videos => {
             this.videos = videos['records'];
             console.log(this.videos);
         });
+    }
+    missingImage(missingImgUrl) {
+        console.log(missingImgUrl);
     }
 };
 HomePage.ctorParameters = () => [
@@ -142,42 +145,6 @@ HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_products_service__WEBPACK_IMPORTED_MODULE_2__["ProductsService"], _services_categories_service__WEBPACK_IMPORTED_MODULE_3__["CategoriesService"], _services_videos_service__WEBPACK_IMPORTED_MODULE_4__["VideosService"]])
 ], HomePage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/shared.module.ts":
-/*!*****************************************!*\
-  !*** ./src/app/shared/shared.module.ts ***!
-  \*****************************************/
-/*! exports provided: SharedModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-
-
-
-
-let SharedModule = class SharedModule {
-};
-SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"]
-        ],
-        declarations: [],
-        providers: [],
-        exports: []
-    })
-], SharedModule);
 
 
 

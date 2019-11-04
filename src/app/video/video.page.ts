@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
     selector: 'app-video',
@@ -9,15 +10,19 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 })
 export class VideoPage implements OnInit {
     video_id: string;
-    constructor(private route: ActivatedRoute, private youtube: YoutubeVideoPlayer) {
+    trustedVideoUrl: SafeResourceUrl;
+    constructor(private route: ActivatedRoute, private domSanitizer: DomSanitizer, private screenOrientation: ScreenOrientation) {
         this.video_id = this.route.snapshot.paramMap.get('id');
-        console.log("Video ID: " + this.video_id)
+        console.log("Video ID: " + this.video_id);
 
+        this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl("https://www.youtube-nocookie.com/embed/" + this.video_id);
     }
     ngOnInit() {
-        if (this.video_id) {
-            this.youtube.openVideo(this.video_id);
-        }
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    }
+
+    ngOnDestroy() {
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     }
 
 }

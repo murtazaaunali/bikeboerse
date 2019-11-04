@@ -42,18 +42,13 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-
-
-
                 </ion-list>
-
-
                 <ion-list no-padding>
                     <p class="range-head">Preis</p>
                     <div class="row">
                         <div class="range-custom">
                             <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="euro" [min]="0" [max]="2500"
-                                (ionChange)="onAgeChange($event)">
+                                (ionChange)="onAgeChange()">
 
                             </ion-range>
                             <div class="slotleft" slot="start">€ {{euro?.lower}}</div>
@@ -66,7 +61,7 @@
                     <div class="row">
                         <div class="range-custom">
                             <ion-range [dualKnobs]="true" [pin]="false" [(ngModel)]="km" [min]="0" [max]="400"
-                                (ionChange)="onAgeChange($event)">
+                                (ionChange)="onAgeChange()">
 
                             </ion-range>
                             <div class="slotleft" slot="start">{{km?.lower}} km</div>

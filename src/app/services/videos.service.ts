@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ProductModel } from './../models/product-model';
 import { Observable, throwError, of } from "rxjs";
 import { map, catchError, tap } from "rxjs/operators";
 
@@ -10,6 +9,9 @@ import { map, catchError, tap } from "rxjs/operators";
 export class VideosService {
     baseUrl: string = "https://bikeboerse.com/BikeApi/ios";
     videos_url: string;
+
+    per_page: number = 10;
+
     constructor(private httpClient: HttpClient) { }
 
     public getVideos() {

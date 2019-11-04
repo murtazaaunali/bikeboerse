@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CategoriesCarouselComponent implements OnInit {
     _categories: any;
     _heading: string;
+    loaded: any;
 
     slideOpts: any = {
         slidesPerView: 3

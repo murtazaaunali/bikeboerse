@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { VideosService } from './../services/videos.service';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Video } from "../models/video";
 
 @Component({
     selector: 'app-videos',
@@ -9,54 +10,23 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 })
 export class VideosPage implements OnInit {
     public splitPaneState: boolean = false;
+    trustedVideoUrl: SafeResourceUrl;
 
-    videos: any;
-    data: any;
-    errorMessage: string;
-    page = 1;
-    perPage = 10;
-    totalData = 0;
-    totalPage = 0;
+    videos: Video[];
+    page = 0;
+    maximumPages = 3;
+    errorMessage: any;
 
-    constructor(private videosService: VideosService, private youtube: YoutubeVideoPlayer) {
-        /* this.videosService.getVideos().subscribe(videos => {
+    item: any;
+
+    constructor(private videosService: VideosService, private sanitizer: DomSanitizer) {
+        this.videosService.getVideos().subscribe(videos => {
+            var i;
             this.videos = videos['records'];
-            console.log(this.videos);
-        }); */
-        this.getVideos();
-    }
-
-    doInfinite(infiniteScroll) {
-        this.page = this.page + 1;
-        setTimeout(() => {
-            this.videosService.getVideos().subscribe(videos => {
-                this.data = videos;
-                this.perPage = 10;
-                this.totalData = this.data['records'];
-                this.totalPage = this.data['records'].length;
-                console.log(this.data['records'].length);
-                for (let i = 0; i < this.data['records'].length; i++) {
-                    this.videos.push(this.data['records'][i]);
-                }
-            },
-                error => this.errorMessage = <any> error);
-            console.log('Async operation has ended');
-            infiniteScroll.complete();
-        }, 1000);
-    }
-
-    getVideos() {
-        this.videosService.getVideos()
-            .subscribe(
-                videos => {
-                    this.totalData = videos['records'].length;
-                    this.totalPage = Math.round(videos['records'].length / this.perPage);
-                    for (let i = 0; i < 10; i++) {
-                        this.data.push(videos['records'][i]);
-                    }
-                    
-                },
-                error => this.errorMessage = <any> error);
+            for (i = 0; i < this.videos.length; i++) {
+                videos['records'][i]['video_url'] = sanitizer.bypassSecurityTrustResourceUrl(videos['records'][i]['video_url']);
+            }
+        });
     }
 
     openMenu() {
@@ -68,10 +38,7 @@ export class VideosPage implements OnInit {
         console.log(this.splitPaneState);
     }
 
-    openVideo(video_id) {
-        console.log();
-        this.youtube.openVideo(video_id);
-    }
+    delete() { }
 
     ngOnInit() {
     }

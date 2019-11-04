@@ -1,18 +1,18 @@
-<main-header></main-header>
+<main-header [showBack]=false></main-header>
 <ion-content>
 	<div class="ion-padding">
 		<!-- Product Carousel for Premiumanzeigen  -->
 		<products-carousel [products]="productsSlides" [size]="1" heading="Premiumanzeigen"></products-carousel>
-		
+
 		<!-- Categories Carousel for Kategorein  -->
 		<categories-carousel [categories]="categories" heading="Kategorein"></categories-carousel>
-		
+
 		<!-- Google Ads Component  -->
 		<google-ads></google-ads>
-		
+
 		<!-- Products Carousel for Neuste Artikel  -->
 		<products-carousel [products]="productsLatests" [size]="2" heading="Neuste Artikel"></products-carousel>
-		
+
 		<!-- Videos Carousel for Neuste User videos  -->
 		<video-carousel [videos]="videos" heading="Neuste User videos"></video-carousel>
 	</div>

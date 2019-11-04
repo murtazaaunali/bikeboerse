@@ -1,6 +1,6 @@
 <div class="product-slider" *ngIf="_size == 1">
   <h5 class="product-heading">{{ _heading }}</h5>
-  <ion-slides pager [pager]="false" [scrollbar]="true">
+  <ion-slides pager [pager]="true" [options]="slideOpts1">
     <ion-slide *ngFor="let product of _products">
       <img [src]="product.filename" onerror="this.src='../assets/no-image.png'" (load)="loaded = true"
         [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.filename"
@@ -27,7 +27,8 @@
           <div class="main-bottom-slider">
             <p class="slider-price">{{ product.price }} €</p>
             <p class="slider-size">{{product.size}}</p>
-            <p class="product-slider-title">{{ product.title }}</p>
+            <p class="product-slider-title">
+              {{ (product.title.length>24)? (product.title | slice:0:24)+'..':(product.title) }}</p>
           </div>
         </a>
       </div>

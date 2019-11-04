@@ -19,6 +19,7 @@ const STORAGE_KEY = 'user_image';
 })
 export class AccountUserinfoComponent implements OnInit {
     username: any;
+    email: any;
     picture: any;
     user_id: any;
     images = [];
@@ -32,9 +33,15 @@ export class AccountUserinfoComponent implements OnInit {
     ngOnInit() {
         this.storage.get('USER_INFO').then((response) => {
             this.username = response.name;
-            this.picture = response.picture;
+            this.email = response.email;
+            if (response.is_admin) {
+                this.picture = "https://bikeboerse.com/userpic/" + response.picture + ".jpg";
+            } else {
+                this.picture = "https://graph.facebook.com/" + response.id + "/picture?width=80&height=80";
+            }
             this.user_id = response.id;
         });
+
     }
 
     pathForImage(img) {

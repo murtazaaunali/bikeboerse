@@ -19,7 +19,7 @@ export class ProductsService {
     }
 
     public getProduct(productId: number): Observable<any> {
-        return this.httpClient.get(this.baseUrl + '/product/readbyid.php?id=' + productId)
+        return this.httpClient.get(this.baseUrl + '/product/readbyidwithimage.php?id=' + productId)
             .pipe(
                 tap(_ => this.log('response received')),
                 catchError(this.handleError('getProducts', []))

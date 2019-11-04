@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-90d0df24.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-2812fda3.js":
 /*!************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-90d0df24.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-2812fda3.js ***!
   \************************************************************************/
 /*! exports provided: P, g */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -32,6 +32,9 @@ var Point = /** @class */ (function () {
  * P1: (0.32, 0.72)
  * P2: (0, 1)
  * P3: (1, 1)
+ *
+ * If you give a cubic bezier curve that never reaches the
+ * provided progression, this function will return NaN.
  */
 var getTimeGivenProgression = function (p0, p1, p2, p3, progression) {
     var tValues = solveCubicBezier(p0.y, p1.y, p2.y, p3.y, progression);
@@ -105,9 +108,9 @@ var solveCubicEquation = function (a, b, c, d) {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-4e92c885.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/haptic-c8f1473e.js":
 /*!******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-4e92c885.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/haptic-c8f1473e.js ***!
   \******************************************************************/
 /*! exports provided: a, b, c, h */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -165,130 +168,9 @@ var hapticSelectionEnd = function () {
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm-es5/helpers-c90aaa66.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/helpers-c90aaa66.js ***!
-  \*******************************************************************/
-/*! exports provided: a, b, c, d, e, f, h, i, n, p, r */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rIC; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return assert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return clamp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return debounceEvent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return debounce; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return findItemLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hasShadowDom; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return isEndSide; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return now; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return pointerCoord; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return renderHiddenInput; });
-var rIC = function (callback) {
-    if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(callback);
-    }
-    else {
-        setTimeout(callback, 32);
-    }
-};
-var hasShadowDom = function (el) {
-    return !!el.shadowRoot && !!el.attachShadow;
-};
-var findItemLabel = function (componentEl) {
-    var itemEl = componentEl.closest('ion-item');
-    if (itemEl) {
-        return itemEl.querySelector('ion-label');
-    }
-    return null;
-};
-var renderHiddenInput = function (always, container, name, value, disabled) {
-    if (always || hasShadowDom(container)) {
-        var input = container.querySelector('input.aux-input');
-        if (!input) {
-            input = container.ownerDocument.createElement('input');
-            input.type = 'hidden';
-            input.classList.add('aux-input');
-            container.appendChild(input);
-        }
-        input.disabled = disabled;
-        input.name = name;
-        input.value = value || '';
-    }
-};
-var clamp = function (min, n, max) {
-    return Math.max(min, Math.min(n, max));
-};
-var assert = function (actual, reason) {
-    if (!actual) {
-        var message = 'ASSERT: ' + reason;
-        console.error(message);
-        debugger; // tslint:disable-line
-        throw new Error(message);
-    }
-};
-var now = function (ev) {
-    return ev.timeStamp || Date.now();
-};
-var pointerCoord = function (ev) {
-    // get X coordinates for either a mouse click
-    // or a touch depending on the given event
-    if (ev) {
-        var changedTouches = ev.changedTouches;
-        if (changedTouches && changedTouches.length > 0) {
-            var touch = changedTouches[0];
-            return { x: touch.clientX, y: touch.clientY };
-        }
-        if (ev.pageX !== undefined) {
-            return { x: ev.pageX, y: ev.pageY };
-        }
-    }
-    return { x: 0, y: 0 };
-};
-/**
- * @hidden
- * Given a side, return if it should be on the end
- * based on the value of dir
- * @param side the side
- * @param isRTL whether the application dir is rtl
- */
-var isEndSide = function (side) {
-    var isRTL = document.dir === 'rtl';
-    switch (side) {
-        case 'start': return isRTL;
-        case 'end': return !isRTL;
-        default:
-            throw new Error("\"" + side + "\" is not a valid value for [side]. Use \"start\" or \"end\" instead.");
-    }
-};
-var debounceEvent = function (event, wait) {
-    var original = event._original || event;
-    return {
-        _original: event,
-        emit: debounce(original.emit.bind(original), wait)
-    };
-};
-var debounce = function (func, wait) {
-    if (wait === void 0) { wait = 0; }
-    var timer;
-    return function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        clearTimeout(timer);
-        timer = setTimeout.apply(void 0, [func, wait].concat(args));
-    };
-};
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@ionic/core/dist/esm-es5/index-064a03a9.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/index-3476b023.js":
 /*!*****************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/index-064a03a9.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/index-3476b023.js ***!
   \*****************************************************************/
 /*! exports provided: s */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -345,10 +227,10 @@ var sanitizeDOMString = function (untrustedString) {
          * non-allowed attribs
          */
         // IE does not support .children on document fragments, only .childNodes
-        var documentFragmentChildren = getElementChildren(documentFragment_1);
+        var dfChildren = getElementChildren(documentFragment_1);
         /* tslint:disable-next-line */
-        for (var childIndex = 0; childIndex < documentFragmentChildren.length; childIndex++) {
-            sanitizeElement(documentFragmentChildren[childIndex]);
+        for (var childIndex = 0; childIndex < dfChildren.length; childIndex++) {
+            sanitizeElement(dfChildren[childIndex]);
         }
         // Append document fragment to div
         var fragmentDiv = document.createElement('div');
@@ -401,8 +283,8 @@ var sanitizeElement = function (element) {
  * IE doesn't always support .children
  * so we revert to .childNodes instead
  */
-var getElementChildren = function (element) {
-    return (element.children != null) ? element.children : element.childNodes;
+var getElementChildren = function (el) {
+    return (el.children != null) ? el.children : el.childNodes;
 };
 var allowedAttributes = ['class', 'id', 'href', 'src', 'name', 'slot'];
 var blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed'];
@@ -411,9 +293,9 @@ var blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-353a032e.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/theme-18cbe2cc.js":
 /*!*****************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-353a032e.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/theme-18cbe2cc.js ***!
   \*****************************************************************/
 /*! exports provided: c, g, h, o */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -425,7 +307,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return hostContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return openURL; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-var _this = undefined;
 
 var hostContext = function (selector, el) {
     return el.closest(selector) !== null;
@@ -457,9 +338,9 @@ var getClassMap = function (classes) {
     return map;
 };
 var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
-var openURL = function (url, ev, direction) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+var openURL = function (url, ev, direction) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
     var router;
-    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
         if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
             router = document.querySelector('ion-router');
             if (router) {
@@ -477,9 +358,9 @@ var openURL = function (url, ev, direction) { return tslib__WEBPACK_IMPORTED_MOD
 
 /***/ }),
 
-/***/ "./node_modules/@ionic/core/dist/esm-es5/watch-options-56e2e31f.js":
+/***/ "./node_modules/@ionic/core/dist/esm-es5/watch-options-2af96011.js":
 /*!*************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm-es5/watch-options-56e2e31f.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm-es5/watch-options-2af96011.js ***!
   \*************************************************************************/
 /*! exports provided: f, w */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -538,6 +419,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 
@@ -545,9 +429,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AccountService = /** @class */ (function () {
-    function AccountService(httpClient, toastController) {
+    function AccountService(httpClient, toastController, loadingController, router) {
         this.httpClient = httpClient;
         this.toastController = toastController;
+        this.loadingController = loadingController;
+        this.router = router;
         this.baseUrl = "https://bikeboerse.com/BikeApi/ios";
     }
     AccountService.prototype.getAllPremiumOptions = function () {
@@ -565,6 +451,10 @@ var AccountService = /** @class */ (function () {
         if (picture === void 0) { picture = 0; }
         if (fb_access_token === void 0) { fb_access_token = 0; }
         if (fb_user_id === void 0) { fb_user_id = 0; }
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
         var formData = {
             is_admin: 0,
             reg_time: '0',
@@ -581,14 +471,13 @@ var AccountService = /** @class */ (function () {
             fb_access_token: fb_access_token,
             fb_user_id: fb_user_id
         };
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        this.httpClient.post(this.baseUrl + '/user/registeruser.php', formData)
+        this.httpClient.post(this.baseUrl + '/user/registeruser.php', formData, { headers: headers, observe: 'response' })
             .subscribe(function (response) {
             _this.presentToastWithOptions("Success", "User created successfully.");
             console.log(response);
+            _this.router.navigate(['login']);
         }, function (error) {
-            _this.presentToastWithOptions("Error", "Invalid credentials provided.<br>Please try again.");
+            _this.presentToastWithOptions("Error", "Invalid user data provided.<br>Please try again.");
             console.log(error.error);
         });
     };
@@ -604,7 +493,6 @@ var AccountService = /** @class */ (function () {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
         };
     };
-    /** Log a HeroService message with the MessageService */
     AccountService.prototype.log = function (message) {
         console.log(message);
     };
@@ -630,13 +518,15 @@ var AccountService = /** @class */ (function () {
     };
     AccountService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
     ]; };
     AccountService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], AccountService);
     return AccountService;
 }());
@@ -731,18 +621,19 @@ var VideosService = /** @class */ (function () {
     function VideosService(httpClient) {
         this.httpClient = httpClient;
         this.baseUrl = "https://bikeboerse.com/BikeApi/ios";
+        this.per_page = 10;
     }
-    VideosService.prototype.getVideos = function (limit) {
+    VideosService.prototype.getVideos = function () {
         var _this = this;
-        if (limit === void 0) { limit = 0; }
-        if (limit == 0) {
-            this.videos_url = this.baseUrl + '/product/getallvideos.php?orderby=title';
-        }
-        else {
-            this.videos_url = this.baseUrl + '/product/getallvideos.php?limit=0,' + limit + '&orderby=title';
-        }
+        this.videos_url = this.baseUrl + '/product/getallvideos.php?orderby=title';
         return this.httpClient.get(this.videos_url)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (_) { return _this.log('response received'); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getVideos', [])));
+    };
+    VideosService.prototype.getLatestVideos = function () {
+        var _this = this;
+        this.videos_url = this.baseUrl + '/product/getallvideos.php?limit=0,10&orderby=title';
+        return this.httpClient.get(this.videos_url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (_) { return _this.log('response received'); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getLatestVideos', [])));
     };
     VideosService.prototype.handleError = function (operation, result) {
         var _this = this;
@@ -770,6 +661,45 @@ var VideosService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], VideosService);
     return VideosService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/shared.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/shared/shared.module.ts ***!
+  \*****************************************/
+/*! exports provided: SharedModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+
+var SharedModule = /** @class */ (function () {
+    function SharedModule() {
+    }
+    SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"]
+            ],
+            declarations: [],
+            providers: [],
+            exports: []
+        })
+    ], SharedModule);
+    return SharedModule;
 }());
 
 

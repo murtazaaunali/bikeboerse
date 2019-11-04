@@ -1,22 +1,18 @@
 <main-header></main-header>
-<ion-content *ngFor="let product of productModel">
+<ion-content>
   <div class="product-slider relative">
     <div class="backicon"><img src="../assets/backicon.png" class="bcicon"></div>
-    <ion-slides>
-      <ion-slide>
-        <img src="../assets/small-car-1.png">
-        <img src="../assets/video-bg.png">
-        <img src="../assets/small-car-1.png">
-        <div class="bg-title"></div>
+    <ion-slides [pager]="true">
+      <ion-slide *ngFor="let image of images">
+        <ion-img [src]="image" class="product-img"></ion-img>
       </ion-slide>
     </ion-slides>
   </div>
   <div class="product-list">
-    <ion-grid>
+    <ion-grid class="padding">
       <ion-row>
         <ion-col size="11">
-          <p class="mb0 black-title">{{ product.title }}</p>
-          <p class="mb0 black-title">Titel of the product of the second line...</p>
+          <p class="mb0 black-title">{{ title }}</p>
         </ion-col>
         <ion-col size="1">
           <div class="list-detail">
@@ -30,55 +26,54 @@
       </ion-row>
       <ion-row>
         <ion-col size="6">
-          <p size class="mb0 blue"><span class="grey-bold">Preis : </span><span
-              class="amount elementblue">{{ product.price }}</span>
+          <p size class="mb0 blue"><span class="grey-bold">Preis: </span>
+            <span class="amount elementblue">{{ price }}</span>
           </p>
         </ion-col>
         <ion-col size="6">
-          <p class="mb0"><span class="grey-bold">Größe:</span><span class="length elementblue">{{ product.size }}</span>
+          <p class="mb0"><span class="grey-bold">Größe: </span>
+            <span class="length elementblue">{{ size }}</span>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6">
-          <p class="mb0"><span class="grey-bold">Pay Pal:</span> <span
-              class="amount">{{ product.paypal == 1 ? 'Ja' : 'No' }}</span></p>
+          <p class="mb0"><span class="grey-bold">Pay Pal: </span>
+            <span class="amount">{{ paypal == 1 ? 'Ja' : 'No' }}</span></p>
         </ion-col>
         <ion-col size="6">
-          <p class="mb0"><span class="grey-bold">Abholung : </span> <span
-              class="amount">{{ product.pickup == 1 ? 'Ja' : 'No' }}</span></p>
+          <p class="mb0"><span class="grey-bold">Abholung: </span>
+            <span class="amount">{{ pickup == 1 ? 'Ja' : 'No' }}</span></p>
         </ion-col>
         <ion-col size="6">
           <p class="mb0 grey-bold small-size">Hersteller:</p>
           <p class="mb0 grey-bold small-size">Federweg Gabel:</p>
         </ion-col>
         <ion-col size="6">
-          <p class="mb0">{{ product.brand }} </p>
-          <p class="mb0"> {{ product.fork }} </p>
+          <p class="mb0"> <span class="amount">{{ brand }}</span> </p>
+          <p class="mb0"> <span class="amount">{{ fork }}</span> </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="box">
+            {{ desc }}
+          </div>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-item class="p0">
-      <ion-textarea class="comments" placeholder="Beschreibung"></ion-textarea>
-    </ion-item>
-    <p class="text-center-doe">Verkaufer: <span class="grey-bold">{{ product.user }}</span></p>
+    <p class="text-center-doe">Verkaufer: <span class="grey-bold">{{ user }}</span></p>
     <div class="main-btn">
       <button ion-button icon-start block color="dark" class="button-login">
         KONTAKTIEREN
       </button>
     </div>
-    <div class="google-add">
-      <ion-img [routerLink]="['/']" src="assets/google-add.png" class="add-img"></ion-img>
-    </div>
+    <google-ads></google-ads>
     <div class="main-video" padding>
       <div class="slider-1">
         <h5 class="product-heading font-10">BEISPIELVIDEO</h5>
-        <ion-slides>
-          <ion-slide>
-            <div class="cst-slider-wrap">
-              <img src="../assets/video-bg.png">
-            </div>
-          </ion-slide>
-        </ion-slides>
+        <div class="cst-slider-wrap">
+          <img src="../assets/video-bg.png">
+        </div>
       </div>
       <ion-grid>
         <ion-row>
@@ -86,7 +81,7 @@
             <p class="mb0 grey-bold small-size">Grundpreis:</p>
           </ion-col>
           <ion-col size="6">
-            <p class="mb0">{{ product.baseprice }} </p>
+            <p class="mb0">{{ baseprice }} </p>
           </ion-col>
           <ion-col size="6">
             <p class="mb0 grey-bold small-size">Ort:</p>

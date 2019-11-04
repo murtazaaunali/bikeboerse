@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main-header></main-header>\n<ion-content>\n  <div padding-horizontal text-center class=\"animated fadeInDown register-account\">\n    <div class=\"backicon\"><img src=\"../assets/backicon.png\"></div>\n    <div class=\"clearfix\"></div>\n    <p class=\"searchline\">\n      Füge einen YouTube-Link ein, um ein Video zu teilen.</p>\n    <div class=\"searchlineinput\">\n      <div class=\"icon-correct\"></div>\n      <ion-input type=\"text\" aria-placeholder=\"You Tube Link einfügen\" placeholder=\"You Tube Link einfügen\"\n        class=\"search-bar-video\"></ion-input>\n    </div>\n    <p class=\"searchline-smalltext\">Der Missbrauch dieser Funktion kamn zur Sperrung denies Account</p>\n  </div>\n  <ion-list no-padding>\n    <ion-item no-padding tappable routerDirection=\"root\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <div class=\"tabs\">\n            <div class=\"tab\">\n              <input type=\"radio\" id=\"rd1\" name=\"rd\">\n              <label class=\"tab-label\" for=\"rd1\"><span class=\"heart-icon\"><img\n                    src=\"../assets/heart-icon.png\"></span><span class=\"menetext\">Meine\n                  Watchlist</span></label>\n              <div class=\"tab-content\">\n                <ion-item-sliding (ionSwipe)=\"delete(item)\">\n                  <ion-item no-padding class=\"main-message-list\" style=\"background-color: #0d47a1 !important\">\n                    <div class=\"main-list-message\">\n                      <ion-img [routerLink]=\"['/']\" src=\"assets/img-01.png\" class=\"message-profile\"></ion-img>\n                      <p class=\"message-list-name\">Fabio Wibmer - Fabiolous Escape 2</p>\n                    </div>\n                  </ion-item>\n                  <ion-item-options>\n                    <button class=\"del-icon\" ion-button expandable (click)=\"delete(item)\">\n                      <ion-img [routerLink]=\"['/']\" src=\"assets/icon-delete-white.png\" class=\"del-img\"></ion-img>\n                    </button>\n                  </ion-item-options>\n                </ion-item-sliding>\n              </div>\n            </div>\n            <div class=\"tab\">\n              <input type=\"radio\" id=\"rd2\" name=\"rd\">\n              <label class=\"tab-label\" for=\"rd2\"><span class=\"heart-icon\"><img\n                    src=\"../assets/video-icon.png\"></span>Geteilte Videos</label>\n              <div class=\"tab-content\">\n                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aut.\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"clearfix\"></div>\n    </ion-item>\n  </ion-list>\n</ion-content>\n<main-footer></main-footer>"
+module.exports = "<main-header></main-header>\n<ion-content>\n  <div class=\"clearfix\"></div>\n  <div>\n    <iframe width=\"100%\" height=\"315\" [src]=\"trustedVideoUrl\" frameborder=\"0\" allowfullscreen></iframe>\n  </div>\n</ion-content>\n<main-footer></main-footer>"
 
 /***/ }),
 
@@ -89,26 +89,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_native_youtube_video_player_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/youtube-video-player/ngx */ "./node_modules/@ionic-native/youtube-video-player/ngx/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+
 
 
 
 
 var VideoPage = /** @class */ (function () {
-    function VideoPage(route, youtube) {
+    function VideoPage(route, domSanitizer, screenOrientation) {
         this.route = route;
-        this.youtube = youtube;
+        this.domSanitizer = domSanitizer;
+        this.screenOrientation = screenOrientation;
         this.video_id = this.route.snapshot.paramMap.get('id');
         console.log("Video ID: " + this.video_id);
+        this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl("https://www.youtube-nocookie.com/embed/" + this.video_id);
     }
     VideoPage.prototype.ngOnInit = function () {
-        if (this.video_id) {
-            this.youtube.openVideo(this.video_id);
-        }
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    };
+    VideoPage.prototype.ngOnDestroy = function () {
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     };
     VideoPage.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-        { type: _ionic_native_youtube_video_player_ngx__WEBPACK_IMPORTED_MODULE_3__["YoutubeVideoPlayer"] }
+        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] },
+        { type: _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_4__["ScreenOrientation"] }
     ]; };
     VideoPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -116,7 +122,7 @@ var VideoPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./video.page.html */ "./node_modules/raw-loader/index.js!./src/app/video/video.page.html"),
             styles: [__webpack_require__(/*! ./video.page.scss */ "./src/app/video/video.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _ionic_native_youtube_video_player_ngx__WEBPACK_IMPORTED_MODULE_3__["YoutubeVideoPlayer"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_4__["ScreenOrientation"]])
     ], VideoPage);
     return VideoPage;
 }());

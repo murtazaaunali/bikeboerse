@@ -17,6 +17,9 @@ export class AuthenticationService {
     baseUrl: string = "https://bikeboerse.com/BikeApi/ios/user/userlogin.php?";
     authState = new BehaviorSubject(false);
 
+    isLoggedIn = false;
+    user = { id: '', name: '', email: '', fb_picture: { data: { url: '' } } };
+
     constructor(private router: Router,
         private storage: Storage,
         private platform: Platform,
@@ -31,6 +34,7 @@ export class AuthenticationService {
     ifLoggedIn() {
         this.storage.get('USER_INFO').then((response) => {
             if (response) {
+                this.router.navigate(['my-account']);
                 this.authState.next(true);
             }
         });
@@ -53,21 +57,46 @@ export class AuthenticationService {
     }
 
     loginWithFB() {
-        this.fb.getLoginStatus().then((res) => {
-            console.log(res);
-            if (res.status === 'connected') {
+        this.fb.login(['public_profile', 'email'])
+            .then(res => {
+                if (res.status === 'connected') {
+                    this.fb.api('/' + res.authResponse.userID + '/?fields=id,email,name,picture', ['public_profile'])
+                        .then(res => {
+                            console.log(res);
+                            if (res) {
+                                this.user = res;
+                                this.storage.set('USER_INFO', this.user).then((response) => {
+                                    console.log(response);
+                                    this.router.navigate(['my-account']);
+                                    this.authState.next(true);
+                                });
+                            } else {
+                                this.presentToastWithOptions('Error', 'Error logging into Facebook. Please try again.');
+                            }
+                        })
+                        .catch(e => {
+                            this.presentToastWithOptions('Error', 'Error logging into Facebook. Error:' + e.message);
+                            console.log(e);
+                        });
+                } else {
+                    this.isLoggedIn = false;
+                }
+            })
+            .catch(e => {
+                this.presentToastWithOptions('Error', 'Error logging into Facebook. Error:' + e.message);
+                console.log('Error logging into Facebook', e)
+            });
+    }
+
+    getUserDetail(userid: any) {
+        this.fb.api('/' + userid + '/?fields=id,email,name,picture', ['public_profile'])
+            .then(res => {
                 console.log(res);
-            } else {
-                this.fb.login(['public_profile', 'user_profile', 'email'])
-                    .then((res: FacebookLoginResponse) => {
-                        console.log('Logged into Facebook!', res);
-                    })
-                    .catch(e => {
-                        console.log('Error logging into Facebook', e);
-                    });
-                this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
-            }
-        });
+                this.user = res;
+            })
+            .catch(e => {
+                console.log(e);
+            });
     }
 
     logout() {

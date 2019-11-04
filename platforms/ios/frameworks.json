@@ -2,7 +2,5 @@
     "WebKit.framework": 1,
     "ImageIO.framework": 1,
     "CoreLocation.framework": 1,
-    "AVFoundation.framework": 2,
-    "MediaPlayer.framework": 1,
-    "JavaScriptCore.framework": 1
+    "AVFoundation.framework": 1
 }

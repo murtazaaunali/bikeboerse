@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main-header></main-header>\n<ion-content padding>\n\t<!-- Logo -->\n\t<account-userinfo></account-userinfo>\n\t<!-- Header -->\n\t<myaccount-header></myaccount-header>\n\t<!-- /Header -->\n\t<button class=\"myAccountbtn\">Rechnungen</button>\n\t<button class=\"myAccountbtn\">Nickname ändern</button>\n\t<button class=\"myAccountbtn\">Passwort ändern</button>\n\t<button class=\"myAccountbtn\">Logout</button>\n\t<div class=\"hr-myAccount\"></div>\n\n\t<p class=\"text-tc\">\n\t\tHändler können ihre Pflichtangaben über unsere <span class=\"strong-txt\">Homepage</span>\n\t\thinterlassen!\n\t</p>\n\n\n</ion-content>\n<main-footer></main-footer>"
+module.exports = "<main-header></main-header>\n<ion-content padding>\n\t<!-- Logo -->\n\t<account-userinfo></account-userinfo>\n\t<!-- Header -->\n\t<myaccount-header></myaccount-header>\n\t<!-- /Header -->\n\t<button class=\"myAccountbtn\">Rechnungen</button>\n\t<button class=\"myAccountbtn\" (click)=\"updateProfile()\">Nickname ändern</button>\n\t<button class=\"myAccountbtn\" (click)=\"changePassword()\">Passwort ändern</button>\n\t<button class=\"myAccountbtn\" (click)=\"logout()\">Logout</button>\n\t<div class=\"hr-myAccount\"></div>\n\n\t<p class=\"text-tc\">\n\t\tHändler können ihre Pflichtangaben über unsere <span class=\"strong-txt\">Homepage</span>\n\t\thinterlassen!\n\t</p>\n\n\n</ion-content>\n<main-footer></main-footer>"
 
 /***/ }),
 
@@ -91,87 +91,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../services/authentication.service */ "./src/app/services/authentication.service.ts");
 
 
-/* import { Camera, CameraOptions, PictureSourceType } from '@ionic-native/Camera/ngx';
-import { ActionSheetController, ToastController, Platform, LoadingController } from '@ionic/angular';
-import { File, FileEntry } from '@ionic-native/File/ngx';
-import { HttpClient } from '@angular/common/http';
-import { Storage } from '@ionic/storage';
-import { FilePath } from '@ionic-native/file-path/ngx';*/
 
 var MyAccountPage = /** @class */ (function () {
-    function MyAccountPage(authenticationService /*, private router: Router, private camera: Camera, private file: File, private http: HttpClient,
-        private actionSheetController: ActionSheetController, private toastController: ToastController,
-        private storage: Storage, private platform: Platform, private loadingController: LoadingController,
-        private ref: ChangeDetectorRef, private filePath: FilePath */) {
+    function MyAccountPage(authenticationService) {
         this.authenticationService = authenticationService;
-        this.images = [];
-        /* this.authenticationService.authenticationState.subscribe(state => {
-            if (!state) {
-                this.router.navigate(['login']);
-            } else {
-                this.router.navigate(['my-account']);
-            }
-        }); */
     }
     MyAccountPage.prototype.ngOnInit = function () {
     };
-    /* async selectImage() {
-        const actionSheet = await this.actionSheetController.create({
-            header: "Select Image source",
-            buttons: [{
-                text: 'Load from Library',
-                handler: () => {
-                    this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-                }
-            },
-            {
-                text: 'Use Camera',
-                handler: () => {
-                    this.takePicture(this.camera.PictureSourceType.CAMERA);
-                }
-            },
-            {
-                text: 'Cancel',
-                role: 'cancel'
-            }
-            ]
-        });
-        await actionSheet.present();
-    }
-
-    takePicture(sourceType: PictureSourceType) {
-        var options: CameraOptions = {
-            quality: 100,
-            sourceType: sourceType,
-            saveToPhotoAlbum: false,
-            correctOrientation: true
-        };
-
-        this.camera.getPicture(options).then(imagePath => {
-            if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-                this.filePath.resolveNativePath(imagePath)
-                    .then(filePath => {
-                        console.log(filePath);
-                    });
-            }
-        });
-
-    }
-
-    createFileName() {
-        var d = new Date(),
-            n = d.getTime(),
-            newFileName = n + ".jpg";
-        return newFileName;
-    } */
+    MyAccountPage.prototype.updateProfile = function () {
+    };
+    MyAccountPage.prototype.changePassword = function () {
+    };
     MyAccountPage.prototype.logout = function () {
         this.authenticationService.logout();
     };
     MyAccountPage.ctorParameters = function () { return [
-        { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] /*, private router: Router, private camera: Camera, private file: File, private http: HttpClient,
-                private actionSheetController: ActionSheetController, private toastController: ToastController,
-                private storage: Storage, private platform: Platform, private loadingController: LoadingController,
-                private ref: ChangeDetectorRef, private filePath: FilePath */ }
+        { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }
     ]; };
     MyAccountPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -179,10 +114,7 @@ var MyAccountPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./my-account.page.html */ "./node_modules/raw-loader/index.js!./src/app/my-account/my-account.page.html"),
             styles: [__webpack_require__(/*! ./my-account.page.scss */ "./src/app/my-account/my-account.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] /*, private router: Router, private camera: Camera, private file: File, private http: HttpClient,
-                private actionSheetController: ActionSheetController, private toastController: ToastController,
-                private storage: Storage, private platform: Platform, private loadingController: LoadingController,
-                private ref: ChangeDetectorRef, private filePath: FilePath */])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"]])
     ], MyAccountPage);
     return MyAccountPage;
 }());

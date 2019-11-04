@@ -1,6 +1,8 @@
-.main-image ion-img {
+.main-image ion-avatar {
     width: 100px;
+    height: 100px;
     margin: 0 auto;
+    border: 10px solid #fff;
 }
 
 .cam-icon {
@@ -47,8 +49,8 @@ ion-img.cam-img {
 ion-img.cam-img {
     width: 30px !important;
     position: relative;
-    left: 68px;
-    top: 55px;
+    left: 210px;
+    top: 65px;
 }
 
 .settings {

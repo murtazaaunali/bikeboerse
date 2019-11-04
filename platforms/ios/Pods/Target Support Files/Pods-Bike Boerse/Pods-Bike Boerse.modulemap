@@ -1,0 +1,6 @@
+framework module Pods_Bike_Boerse {
+  umbrella header "Pods-Bike Boerse-umbrella.h"
+
+  export *
+  module * { export * }
+}

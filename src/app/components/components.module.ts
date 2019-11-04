@@ -15,6 +15,8 @@ import { ProductsCarouselComponent } from './products-carousel/products-carousel
 import { CategoriesCarouselComponent } from './categories-carousel/categories-carousel.component';
 import { GoogleAdsComponent } from './google-ads/google-ads.component';
 import { VideoCarouselComponent } from './video-carousel/video-carousel.component';
+import { VideoFilterComponent } from './video-filter/video-filter.component';
+
 
 @NgModule({
     declarations: [
@@ -27,7 +29,8 @@ import { VideoCarouselComponent } from './video-carousel/video-carousel.componen
         ProductsCarouselComponent,
         CategoriesCarouselComponent,
         GoogleAdsComponent,
-        VideoCarouselComponent
+        VideoCarouselComponent,
+        VideoFilterComponent
     ],
     imports: [
         CommonModule,
@@ -45,7 +48,8 @@ import { VideoCarouselComponent } from './video-carousel/video-carousel.componen
         ProductsCarouselComponent,
         CategoriesCarouselComponent,
         GoogleAdsComponent,
-        VideoCarouselComponent
+        VideoCarouselComponent,
+        VideoFilterComponent
     ]
 })
 export class ComponentsModule {

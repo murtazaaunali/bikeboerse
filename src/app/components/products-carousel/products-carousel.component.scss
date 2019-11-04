@@ -210,3 +210,13 @@
     margin-right: auto;
     display: block;
 }
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    background: #62c2e4 !important;
+}
+
+:host {
+    .swiper-pagination-bullet-active {
+        background: #62c2e4;
+    }
+}

@@ -18,10 +18,11 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/File/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
         Camera,
         File,
         FilePath,
-        YoutubeVideoPlayer,
+        ScreenOrientation,
         InAppBrowser,
         WebView,
         Facebook,
