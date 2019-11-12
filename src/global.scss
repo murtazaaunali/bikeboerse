@@ -65,13 +65,17 @@ p.cat-title {
     padding-top: 5px;
     padding: 3px;
 }
+video-carousel ion-img {
+    width: 100%;
+}
 .slider-price {
 border: 0.5px solid #fff;
     padding: 1px 10px !important;
 }
 .slider-size {
     border: 0.5px solid #fff;
-    padding: 1px 19px !important;
+    padding: 1px 10px !important;
+    margin-right: 5px !important;
 }
 .product-heading {
     font-size: 10pt;
@@ -88,11 +92,20 @@ button.footer.w20 img {
     margin-bottom: 5px !important;
 }
 img.product-main-slider.img-loaded{
-    background: #fff;
+ /*   background: #fff;*/
 }
 .swiper-container-android .swiper-slide, .swiper-wrapper {
 
     box-shadow: 0 11px 2px -2px #d4d4d4 !important;
+}
+
+.product-slider{
+    ion-slides{
+img{
+    object-fit:cover;
+}
+
+    }
 }
 .bg-search-blue{
 
