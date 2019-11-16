@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +16,6 @@ import { CategoriesCarouselComponent } from './categories-carousel/categories-ca
 import { GoogleAdsComponent } from './google-ads/google-ads.component';
 import { VideoCarouselComponent } from './video-carousel/video-carousel.component';
 import { VideoFilterComponent } from './video-filter/video-filter.component';
-
 
 @NgModule({
     declarations: [
@@ -50,6 +49,9 @@ import { VideoFilterComponent } from './video-filter/video-filter.component';
         GoogleAdsComponent,
         VideoCarouselComponent,
         VideoFilterComponent
+    ],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
     ]
 })
 export class ComponentsModule {

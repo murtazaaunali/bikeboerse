@@ -23,16 +23,17 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
     imports: [
         BrowserModule,
+        ComponentsModule,
         IonicModule.forRoot(),
         AppRoutingModule,
-        HttpClientModule, 
+        HttpClientModule,
         IonicStorageModule.forRoot()
     ],
     providers: [
