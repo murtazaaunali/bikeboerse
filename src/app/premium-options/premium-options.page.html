@@ -11,7 +11,6 @@
           <ion-checkbox slot="start" value="one" color="secondary"></ion-checkbox>
           <ion-label class="main-label-check"><b>{{ (option.title.length>30)? (option.title | slice:0:30)+'..':(option.title) }}</b>
             <p class="check-desc">{{ option.desc }}</p>
-           <!-- <img src="assets/best-seller.png" class="best-sellers" />-->
             <div class="right-check">
               <p>{{ option.price }} €</p>
               <img src="assets/exclaimation-mark.png" />
@@ -25,7 +24,8 @@
       <p class="totla-check-number">Summe: 4,99 €</p>
     </div>
     <div class="button-total-check">
-
+     <!-- <ion-button class="check-final-btn" shape="round" color="secondary">Kaufen und mit Paypal zahlen
+      </ion-button>-->
       <button type="button" class="premium-optios-btns">Zahlungspfilichtig bestellen   <img src="assets/paypal.png" /></button>
     </div>
   </div>
