@@ -23,7 +23,7 @@
 
     p {
       text-align: right;
-
+      margin-top: -4px;
       ion-img {
         width: 24px;
         float: left;
@@ -39,12 +39,13 @@
 
 .mb0 {
   margin-bottom: 0px;
+  font-size: 15px;
 }
 
 .grey-bold {
   color: #555555;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .bold-blue {
@@ -95,7 +96,7 @@
 
 .text-center-doe {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 0rem;
   font-size: 11px;
 }
 
@@ -117,7 +118,14 @@
 .item-native {
   --border-color: red;
 }
-
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+.cst-slider-wrap {
+  margin-right: 3px;
+  margin-left: 3px;
+}
 // footer start
 
 .footer {
@@ -140,7 +148,7 @@ button.footer {
 }
 
 .amount {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .w20 img {
@@ -160,15 +168,17 @@ footer {
 .elementblue {
   background: #61c2e4 !important;
   color: #fff !important;
-  font-size: 18px !important;
+  font-size: 14px !important;
   border-radius: 50px !important;
-  width: 100px !important;
+  width: 76px !important;
   display: block;
-  height: 30px;
+  /* height: 30px; */
   text-align: center;
   margin: 0px;
-  padding: 0px;
+  padding: 5px 0px 7px;
   float: right;
+  position: relative;
+  top: -4px;
 }
 
 .relative {
@@ -188,8 +198,9 @@ footer {
 
 .black-title {
   color: #000;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
+  margin-top: 0px;
 }
 
 div#map img {
@@ -210,7 +221,7 @@ div#map img {
     font-weight: 600;
     margin-top: -9px;
     margin-left: 5px;
-    width: 70px;
+    width: 62px;
     position: relative;
     z-index: 9;
     margin-bottom: 0px;
@@ -227,10 +238,27 @@ div#map img {
     clear: both;
   }
 }
-
+h5.product-heading {
+  border-bottom: 2px solid #d4d4d4;
+  span {
+    border-bottom: 2px solid #62c2e4;
+    width: 44px;
+    display: block;
+    position: relative;
+    top: 2px;
+  }
+}
+p.slider-price:nth-child(1){
+  float: left !important;
+}
+p.slider-price:nth-child(2){
+  float: right !important;
+  margin-right: 5px;
+}
 .product-img {
   width: 100%;
-  height: 280px;
+  height: 210px;
+  object-fit: cover;
 }
 
 .padding {
@@ -242,4 +270,7 @@ div#map img {
   border-radius: 5px;
   border: 1px solid #cccccc;
   padding: 10px;
+  font-size: 14px;
+  color: #555555;
+  line-height: 19px;
 }
