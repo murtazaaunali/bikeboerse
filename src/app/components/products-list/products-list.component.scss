@@ -10,19 +10,24 @@
 
         .product-title-list {
             margin-top: 0px;
-            font-size: 14px;
+            font-size: 9pt;
             font-weight: 600;
             color: #000;
+            padding-left: 6px;
+            padding-top: 4px;
         }
     }
 
     .product-list-image {
-        height: 110px;
+        height: 101px;
+        object-fit: cover;
     }
 
     .price-prod-list {
         color: #62c2e4;
         margin-bottom: 0px;
+        padding-left: 6px;
+        font-size: 9pt;
     }
 
     .product-icon-image {
@@ -314,3 +319,19 @@ div[scrollx=true] {
 div[scrolly=true] {
     overflow-y: auto;
 }
+p.size-prod-list {
+    width: 70px;
+    float: left;
+    padding-left: 6px;
+    margin-bottom: 0px;
+}
+.star-right {
+    margin-top: 12px;
+}
+ion-grid.md.hydrated {
+    padding: 0px;
+}
+ion-col.md.hydrated {
+    padding: 0px;
+}
+

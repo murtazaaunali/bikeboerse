@@ -1,3 +1,6 @@
+ion-grid.md.hydrated {
+  padding: 0px;
+}
 .product-list {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -58,7 +61,7 @@ ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
 
 .star-right {
   float: right;
-
+  margin-top: 17px;
   ion-img {
     width: 24px;
     float: left;
@@ -71,10 +74,14 @@ ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
 }
 
 .cat-pt-name {
-  font-size: 12px;
-  margin-bottom: 0px;
+  font-size: 13px;
   margin-top: 10px;
-  font-weight: 600;
+  color: #555555;
+  margin-bottom: -2px;
+}
+.cat-name {
+  color: #222222;
+  font-size: 14pt;
 }
 
 .border-bottom {

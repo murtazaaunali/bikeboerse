@@ -25,33 +25,43 @@ ion-icon.md.hydrated {
   margin-top: -1px !important;
   position: relative;
   top: 10px;
-
+  text-align: center;
+  color: #222222;
+  font-size: 15pt;
   img {
-    width: 17px;
+    width: 14px;
   }
 
 }
-
+.ion-padding {
+  padding: 10px 0px;
+}
 .paragraph-description {
-  margin-top: 25px;
+  margin-top: 19px;
+  text-align: center;
+  font-size: 9pt;
+  color: #555555;
 }
 
 .right-check {
   float: right;
   text-align: center;
-  margin-top: -25px;
-
+  margin-top: -19px;
+  width: 31px;
   img {
     width: 20px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 11px;
     font-weight: 600;
     color: #555555;
   }
 }
-
+.right-check img {
+  width: 17px !important;
+  margin-top: 0px !important;
+}
 .check-desc {
   float: left;
   font-size: 12px;
@@ -62,21 +72,29 @@ ion-icon.md.hydrated {
   b {
     float: left;
     width: 100%;
+    color: #555555;
+    font-size: 10pt;
+    margin-top: 4px;
   }
 }
-
+ion-checkbox.ion-color.ion-color-secondary.md.in-item.interactive.hydrated {
+  margin: 0px;
+  margin-right: 20px;
+  margin-top: -7px;
+}
 .total-check {
   .total-desc {
     float: left;
     color: #888888;
     padding-left: 20px;
+    font-size: 10pt;
   }
 
   .totla-check-number {
     float: right;
     padding-right: 13px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 10pt;
   }
 }
 
@@ -96,8 +114,24 @@ ion-item {
       &.md {
         &.in-list {
           border-bottom: 1px solid #dedede;
+          --ion-background-color: #fff;
+          height: 65px;
         }
       }
     }
   }
 }
+button.premium-optios-btns {
+  background: #ffc439;
+  width: 100%;
+  border-radius: 62px;
+  border: 2px solid #868688;
+  padding: 2px 0px 16px;
+  margin-top: 10px;
+  img{
+    width: 30px;
+    position: relative;
+    top: 10px;
+  }
+}
+

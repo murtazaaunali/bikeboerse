@@ -16,7 +16,7 @@ ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.hydrated.md.searchbar-
 
   .bg-search-blue {
     background: $bluecolor;
-    width: 54px;
+    width: 52px;
     text-align: center;
     padding: 17px 0px;
     border-radius: 38px;
@@ -325,4 +325,10 @@ input:checked {
   max-width: 100%;
   border-right: 0;
   border-left: var(--border);
+}
+h2.main-title.text-center {
+  text-align: center;
+  font-size: 16pt;
+  font-weight: bold;
+  color: #555555;
 }

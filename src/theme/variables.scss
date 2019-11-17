@@ -99,7 +99,9 @@ ion-ripple-effect.md.hydrated {
 ion-content {
   --ion-background-color: #f3f3f3;
 }
-
+ion-segment-button.md.segment-button-has-label.segment-button-has-label-only.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant.hydrated[_ngcontent-lve-c5] {
+  font-size: 10px !important;
+}
 .backicon {
   display: block;
 }
@@ -244,4 +246,7 @@ main-footer {
 
 ion-row.footer.md.hydrated {
   background: none !important;
+}
+ion-menu.split-pane-side.md.menu-type-overlay.menu-enabled.menu-side-end.hydrated.menu-pane-visible ion-list.md.list-md.hydrated .row .col {
+  margin-left: 0px;
 }

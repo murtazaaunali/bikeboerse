@@ -25,14 +25,20 @@ ion-icon.md.hydrated {
   margin-top: -1px !important;
   position: relative;
   top: 10px;
+  text-align: center;
+  color: #222222;
+  font-size: 15pt;
 
   img {
-    width: 17px;
+    width: 14px;
   }
 }
 
 .paragraph-description {
-  margin-top: 25px;
+  margin-top: 19px;
+  text-align: center;
+  font-size: 9pt;
+  color: #555555;
 }
 
 .list-left {

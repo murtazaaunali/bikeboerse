@@ -5,20 +5,20 @@
 }
 button.del-icon {
   background: #fc6666;
-  margin-top: 5px;
-  padding: 0px 30px;
+  margin-top: 4px;
+  padding: 0px 26px;
   .del-img {
     width: 30px;
   }
 }
   .main-message-list{
 
-      border-top: 1px solid #d4d4d4;
+      border-top: 1px solid #c3c3c3;
       border-radius: 3px;
-      margin-top: 5px;
-      border-right: 1px solid #d4d4d4;
-      border-left: 1px solid #d4d4d4;
-    --ion-item-background: #fff;
+      margin-top: 4px;
+      border-right: 1px solid #c3c3c3;
+      border-left: 1px solid #c3c3c3;
+    --ion-item-background: #fefefe;
     .item-inner{
       padding: 0px;
     }
@@ -27,10 +27,12 @@ button.del-icon {
 .main-list-message {
   width: 100%;
   .date-message {
-    font-size: 12px;
+    font-size:11px;
     width: 100%;
     text-align: right;
     margin-bottom: 0px;
+    margin-top: 4px;
+    color: #444444;
   }
   .message-profile {
     width: 60px;
@@ -39,15 +41,20 @@ button.del-icon {
     padding-left: 8px;
   }
   .message-list-name {
-    font-weight: 600;
-    margin-top: 7px;
+    margin-top: 10px;
     padding-left: 20px;
     float: left;
-    font-size: 15px;
+    font-size: 13px;
+    font-family: arial;
     span{
       clear: both;
       display: block;
-      color: #62c2e4;
+      color: #1f93c2;
+      padding-top: 6px;
     }
   }
+}
+.backicon {
+  margin-bottom: 26px !important;
+  padding-top: 0px !important;
 }
