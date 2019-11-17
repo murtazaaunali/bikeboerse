@@ -8,9 +8,9 @@
 
         .product-main-slider {
             width: 100%;
-            border: 1px solid #d4d4d4;
-            border-radius: 3px;
-            border-bottom: 2px solid #d4d4d4;
+            border: 1px solid #c3c3c3;
+            border-radius: 5px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.5);
             height: 205px;
         }
 
@@ -24,7 +24,7 @@
             }
 
             .product-slider-title {
-                background: rgba(0, 0, 0, 0.5) !important;
+                background: rgba(85, 85, 85, 0.84) !important;
                 color: #fff;
                 padding: 7px;
                 border-radius: 3px;
@@ -226,5 +226,13 @@
     .google-add {
         margin: 10px 0px;
     }
+    p.small-letters {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #707070;
+        font-size: 8pt;
+    }
+
+
 }
 

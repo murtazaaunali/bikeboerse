@@ -29,7 +29,7 @@ button.footer {
 
 footer {
     border-top: 2px solid #fcfcfc;
-    padding-top: 5px !important;
+   /* padding-top: 5px !important;*/
 }
 
 p.text-tc {
@@ -96,3 +96,7 @@ ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button
     background: #62c2e4;
     color: #fff;
 }
+button.footer.w20 img {
+    margin-bottom: 2px !important;
+}
+
