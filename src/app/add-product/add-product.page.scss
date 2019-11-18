@@ -96,13 +96,28 @@ ion-input.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
 }
 
 
-
+.backicon {
+  margin-bottom: 0px !important;
+  padding-top: 14px !important;
+  position: absolute;
+  top: 0px;
+}
+p.size-prod-list {
+  font-size: 12px;
+}
 .backicon {
   float: left;
   width: 12px;
 }
-.register-account{    padding: 10px 20px;
-  background: #fff;
+p.price-prod-list {
+  font-size: 12px;
+}
+ion-img.product-list-image.md.hydrated {
+  height: 97px;
+  float: left;
+}
+.register-account{        padding: 10px 10px;
+  background: #fcfcfc;
 }
 .tc{    font-size: 14px;
   width: 70%;
@@ -120,14 +135,14 @@ form{width:90%;margin:0px auto;}
   padding-left:0px !important;}
 .item-native{border:none; --padding-start: 0px !important;
   --padding-end: 0px !important;}
-.bold-grey{font-weight:bold;color:#555555;float:left;margin-top: 5px;}
+.bold-grey{font-weight:bold;color:#555555;float:left;margin-top: 8px;    font-size: 13px;}
 ion-input.input-amount.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
   width: 50px;
   background:#fff;
   --padding-start: 0px !important;
   --padding-end: 0px !important;
   padding-left: 5px !important;
-  height: 30px;
+  height: 34px;
   font-size: 10px;
   margin-right: 8px;
   float: left;
@@ -135,24 +150,38 @@ ion-input.input-amount.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
   left: 5px;
 
 }
-.grey{color:#555555;font-size:14px;margin-top: 5px;}
-.festpreis{    background: #fff;
+p.mb0.blue {
+  margin-top: 10px;
+}
+.grey{color:#555555;font-size:14px;margin-top: 5px;position: relative;
+  top: 7px;}
+.festpreis{   background: #fff;
   border: 1px solid #c3c3c3;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 4px;
-  height: 28px;
+  height: 34px;
   width: 100%;
   font-size: 14px;
   color: #555555;
-  padding-left: 20px;}
+  padding-left: 20px;
+  margin-top: 10px;}
 ion-toggle {
   padding: 4px;
   padding-left: 7px;
   height: 17px;
+  position: relative;
+  top: 7px;
 }
 ion-label.sc-ion-label-md-h.sc-ion-label-md-s.md.hydrated {
   position: relative;
   bottom: 0px;
+  padding: 10px 5px;
+}
+.main-list-insert {
+  background: rgba(252, 252, 252, 0.77);
+}
+ion-content .animated.fadeInDown.register-account.bg-white:nth-last-of-type(1){
+  background: transparent !important;
 }
 .ion-color-secondary {
   --ion-color-base: #fff !important;}
@@ -243,12 +272,16 @@ ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button
   .bottom-icon-list {
     border-right: 1px solid #d4d4d4;
   }
+  ion-item.item-insert-list.item-label.item.md.in-list.ion-focusable.hydrated {
+    --ion-background-color: #ffffff;
+  }
   .last-orange {
     color: #f7790d;
     font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 0px;
     margin-top: 10px;
+    text-align: center;
     img {
       width: 12px;
       margin-right: 2px;
@@ -375,7 +408,7 @@ font-size: 14px;
   
 
 
-.register-account{margin:20px 0px;}
+.register-account{    margin: 0px 0px 20px;}
 .tc{    font-size: 14px;
   width: 70%;
   text-align: center;
@@ -392,13 +425,19 @@ font-size: 14px;
   top: 0px;
   z-index: 9999;
   h2.text-primary.insert-done {
-      color: #555555;
-      font-size: 15px;
-      text-align: center;
-      margin-top: 0px;
-      position: relative;
-      left: -10px;
+    text-align: center;
+    margin-top: 0px;
+    position: relative;
+    color: #222222;
+    font-size: 18px;
+    font-weight: normal;
   }
+}
+.animated.fadeInDown.register-account.bg-white.withoutbg {
+  background: transparent;
+}
+.animated.fadeInDown.register-account.withoutbg {
+  background: transparent;
 }
 ion-segment-button {
   height: 34px;
@@ -420,7 +459,7 @@ ion-label.padding-0.sc-ion-label-md-h.sc-ion-label-md-s.md.hydrated {
 ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
   margin-bottom: 20px;
 }
-.hr{border:1px solid #c3c3c3;width:60%;height:1px;margin:25px auto;}
+.hr{border:1px solid #c3c3c3;width:80%;height:1px;margin:25px auto;}
 
 
 ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button-has-label-only.segment-button-checked.segment-button-layout-icon-top.ion-activatable.ion-activatable-instant[_ngcontent-hvv-c1] {
@@ -431,8 +470,12 @@ ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button
   width:100%;
   text-align: center;
 }
+.last-segment {
+  padding: 0px 12px;
+  margin-bottom: -40px;
+}
 .button-login {
-  width:80%;
+  width: 80%;
   border: none;
   border-radius: 160px;
   color: #fff;
@@ -440,6 +483,11 @@ ion-segment-button.padding-0.hydrated.md.segment-button-has-label.segment-button
   padding: 18px !important;
   font-size: 16px;
   background: #62c2e4;
+  margin: 50px auto;
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 25px;
   // margin-top:20%;
 }
 .w15{

@@ -115,15 +115,16 @@
 .backicon {
   float: left;
   width: 12px;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 30px !important;
 }
 
 .searchline {
   font-size: 11px;
   color: #555555;
   text-align: left;
-  margin-top: 10px;
-
+  margin-top: 4px;
+  clear: both;
 }
 
 .search-bar-video {
@@ -146,7 +147,7 @@
 }
 
 .searchlineinput {
-
+  clear: both;
   position: relative;
 }
 
@@ -231,6 +232,10 @@ ion-segment.sc-ion-segment-md-h.sc-ion-segment-md-s.md.hydrated {
 
 }
 
+ion-list.md.list-md.hydrated img {
+
+  margin-top: 0px !important;
+}
 .cat-pt-name {
   font-size: 12px;
   margin-bottom: 0px;

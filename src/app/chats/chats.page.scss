@@ -65,7 +65,7 @@
   
 }
 
-.sender-chat-grey{color:#555 !important;border:1px solid #62c2e4!important;background-color: #fff!important;
+.sender-chat-grey{color:#555 !important;border:1px solid #62c2e4 !important;background-color: #fff!important;
   color: #555!important;border-radius: 5px;    }
   .date-time {
     margin: 35px 0px;
@@ -128,7 +128,7 @@ top: 16px;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 10px;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 10px;
     position: relative;
 }
@@ -147,7 +147,7 @@ top: 16px;
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 10px;
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 10px;
   position: relative;
   color: #fff;
@@ -156,6 +156,6 @@ top: 16px;
 }
 .sender-img{
   /* width: 30%; */
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 90px;
 }
