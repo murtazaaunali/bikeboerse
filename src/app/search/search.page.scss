@@ -23,7 +23,10 @@ ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.hydrated.md.searchbar-
     color: #fff;
     margin: 0px auto;
   }
-
+  input.searchbar-input.sc-ion-searchbar-md {
+    background: #fff !important;
+    box-shadow: none;
+  }
   .search-query {
     text-align: center;
     font-size: 12px;

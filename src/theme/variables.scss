@@ -123,7 +123,32 @@ ion-thumbnail :focus {
 .swiper-slide img {
   height: 55px;
 }
-
+.slider-2 .swiper-wrapper {
+  margin-top: 10px;
+}
+input.searchbar-input.sc-ion-searchbar-md {
+  background: #fff !important;
+  box-shadow: none;
+}
+ion-searchbar.sc-ion-searchbar-md-h.sc-ion-searchbar-md-s.hydrated.md.searchbar-left-aligned[_ngcontent-qad-c1] {
+  border-bottom: 1px solid #c3c3c3;
+}
+.swiper-container-horizontal>.swiper-scrollbar {
+  position: absolute;
+  left: 0% !important;
+  bottom: auto !important;
+  z-index: 50;
+  height: 2px !important;
+  width: 100%;
+  top: 0px !important;
+  opacity: 1 !important;
+}
+.swiper-scrollbar-drag {
+  background: #62c2e4;
+}
+categories-carousel .swiper-wrapper {
+  margin-top: 10px;
+}
 p.cat-title {
   width: 100%;
   background: #fff;
