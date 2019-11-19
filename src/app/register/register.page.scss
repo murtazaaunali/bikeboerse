@@ -9,7 +9,10 @@
   background-repeat: no-repeat;
 
 }
-
+.backicon {
+  position: absolute;
+  top: 5px;
+}
 .mainDiv {
   padding: 13px 0px;
 }
@@ -51,7 +54,7 @@ ion-input.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
 }
 
 button {
-  width: 80%;
+  width: 90%;
   border: none;
   border-radius: 160px;
   color: #fff;
@@ -68,8 +71,8 @@ ion-input.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
   border-radius: 160px;
   color: #555555;
   margin-bottom: 10px;
-  padding-left: 24px !important;
-  font-size: 16px;
+  padding-left: 12px !important;
+  font-size: 14px;
 }
 
 .item-native {
@@ -83,11 +86,21 @@ ion-input.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
   color: #fff;
   margin-bottom: 10px;
   padding: 18px !important;
-  font-size: 16px;
+  font-size: 14px;
   background: #62c2e4;
   margin-top: 4px;
 }
+::-webkit-input-placeholder { /* Edge */
+  color: #555555;
+}
 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #555555;
+}
+
+::placeholder {
+  color: #555555;
+}
 .login-button-fb {
   background: #fff;
   color: #3a5998;
@@ -124,19 +137,19 @@ ion-input.sc-ion-input-md-h.sc-ion-input-md-s.md.hydrated {
 }
 
 .register-account {
-  margin: 20px 0px;
+  margin: 20px -15px;
   margin-bottom: 30px;
 }
 
 ion-input {
   border: 1px solid #e6e6e6;
   border-radius: 20px;
-  padding: 0px 10px !important;
+  padding: 4px 10px !important;
   margin-bottom: 10px;
 }
 
 .tc {
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
   text-align: center;
   color: #444444;
@@ -149,6 +162,6 @@ ion-input {
 }
 
 form {
-  width: 80%;
+  width: 90%;
   margin: 0px auto;
 }
